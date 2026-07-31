@@ -1,0 +1,112 @@
+{{- /* schema/product.html — Product JSON-LD (Alucastor material entities)
+   Data source: data/schema/products.toml + data/schema/services.toml
+   Called by: schema/render.html (material pages, detected via url_path)
+   Front Matter override: schema.about, schema.mentions
+
+   Emitted properties (all driven by the existing data layer):
+     name / description       <- [<lang>.<id>] name, description
+     category                 <- [[products]] category
+     material                 <- [[products]] material_grades
+     additionalProperty       <- key_properties + [<lang>.<id>] properties
+     isRelatedTo              <- [[products]] related_services
+     manufacturer             -> #organization node */ -}}
+
+{{- $lang := .Page.Language.Lang -}}
+{{- $products := hugo.Data.schema.products -}}
+{{- $services := hugo.Data.schema.services -}}
+{{- $matchedID := .Scratch.Get "schema_matched_product" -}}
+
+{{- $productEntry := "" -}}
+{{- range $products.products -}}
+  {{- if eq .id $matchedID -}}
+    {{- $productEntry = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $prodLocalized := index $products $lang -}}
+{{- $prodText := index $prodLocalized $matchedID -}}
+
+{{- /* Resolve related services into linked Service nodes */ -}}
+{{- $svcLocalized := index $services $lang -}}
+{{- $related := slice -}}
+{{- range $productEntry.related_services -}}
+  {{- $sid := . -}}
+  {{- with index $svcLocalized $sid -}}
+    {{- $name := .name -}}
+    {{- range $services.services -}}
+      {{- if eq .id $sid -}}
+        {{- $related = $related | append (dict "name" $name "url" .url_path) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "{{ printf "%s#product" .Permalink | safeJS }}",
+  "name": "{{ $prodText.name | safeJS }}",
+  {{ with $prodText.description }}"description": "{{ . | safeJS }}",{{ end }}
+  "url": "{{ .Permalink | safeJS }}",
+  "category": "{{ $productEntry.category | safeJS }}",
+  "manufacturer": {
+    "@type": "Organization",
+    "@id": "{{ printf "%s#organization" .Site.BaseURL | safeJS }}"
+  }
+  {{- with $productEntry.material_grades -}}
+  ,
+  "material": [
+    {{ range $i, $mg := . -}}
+    {{- if $i }}, {{ end -}}"{{ $mg | safeJS }}"
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- $props := slice -}}
+  {{- with $prodText.key_properties -}}
+    {{- $props = $props | append (dict "name" "Key Properties" "value" .) -}}
+  {{- end -}}
+  {{- range $prodText.properties -}}
+    {{- $props = $props | append (dict "name" "Property" "value" .) -}}
+  {{- end -}}
+  {{- with $productEntry.alloy_designations -}}
+    {{- $props = $props | append (dict "name" "Alloy Designations" "value" (delimit . ", ")) -}}
+  {{- end -}}
+  {{- with $prodText.applications -}}
+    {{- $props = $props | append (dict "name" "Applications" "value" (delimit . "; ")) -}}
+  {{- end -}}
+  {{- with $props -}}
+  ,
+  "additionalProperty": [
+    {{ range $i, $p := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "PropertyValue",
+      "name": "{{ $p.name | safeJS }}",
+      "value": "{{ $p.value | safeJS }}"
+    }
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- with $related -}}
+  ,
+  "isRelatedTo": [
+    {{ range $i, $r := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "Service",
+      "name": "{{ $r.name | safeJS }}",
+      "url": "{{ $r.url | absURL | safeJS }}"
+    }
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- with .Params.schema.about -}}
+  ,
+  "about": {
+    "@type": "Thing",
+    "url": "{{ . | safeJS }}"
+  }
+  {{- end -}}
+}
+</script>

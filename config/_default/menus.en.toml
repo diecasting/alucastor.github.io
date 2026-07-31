@@ -1,0 +1,68 @@
+# ==========================================================================
+# menus.en.toml — Alucastor (English Navigation)
+# ==========================================================================
+# Navigation mirrors the FIVE actual Alucastor service entities defined in
+# data/schema/services.toml. Every URL below resolves to a real page —
+# keep this file in sync with the service entity layer.
+# ==========================================================================
+
+[[main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[main]]
+  name = "Services"
+  url = "/services/"
+  weight = 2
+  identifier = "services"
+
+[[main]]
+  name = "Gravity Die Casting"
+  url = "/services/gravity-die-casting/"
+  parent = "services"
+  weight = 1
+
+[[main]]
+  name = "Sand Casting"
+  url = "/services/sand-casting/"
+  parent = "services"
+  weight = 2
+
+[[main]]
+  name = "Low Pressure Die Casting"
+  url = "/services/low-pressure-die-casting/"
+  parent = "services"
+  weight = 3
+
+[[main]]
+  name = "CNC Machining"
+  url = "/services/cnc-machining/"
+  parent = "services"
+  weight = 4
+
+[[main]]
+  name = "Prototype"
+  url = "/services/prototype/"
+  parent = "services"
+  weight = 5
+
+[[main]]
+  name = "Materials"
+  url = "/materials/"
+  weight = 3
+
+[[main]]
+  name = "Industries"
+  url = "/industries/"
+  weight = 4
+
+[[main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 5
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 6

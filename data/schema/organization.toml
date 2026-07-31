@@ -1,0 +1,96 @@
+# ==========================================================================
+# organization.toml — Alucastor Organization Identity [SITE LAYER]
+# ==========================================================================
+# Feeds Organization, ManufacturingBusiness and WebSite JSON-LD.
+# Brand identity (legalName, logo, url, address, geo, sameAs) lives in
+# config/branding/schema.toml. This file holds ONLY the multilingual
+# marketing text rendered at the Organization level.
+# ==========================================================================
+
+# --- Global contact point (language-neutral) ---
+[contact_point]
+contact_type = "sales"
+email = "hank@alucastor.com"
+available_language = ["English", "German", "Japanese", "French", "Spanish", "Chinese"]
+
+# --- Multilingual site metadata (language-neutral lists) ---
+[multilingual]
+in_language = ["en", "de", "ja", "fr", "es"]
+available_language = ["en", "de", "ja", "fr", "es"]
+
+
+# ==========================================================================
+# LOCALIZED ORGANIZATION TEXT
+# ==========================================================================
+
+[en]
+name = "Alucastor"
+description = "Alucastor is an aluminum casting manufacturer in China specialising in gravity die casting, aluminum sand casting, low pressure die casting, precision CNC machining and rapid prototyping for automotive, aerospace, electronics, robotics and new energy customers worldwide."
+keywords = [
+  "Aluminum Casting Manufacturer China",
+  "Gravity Die Casting",
+  "Aluminum Sand Casting",
+  "Low Pressure Die Casting",
+  "Precision CNC Machining",
+  "Rapid Prototyping",
+  "ADC12 Aluminum Casting",
+  "A380 Aluminum Casting"
+]
+site_title = "Alucastor — Aluminum Casting Manufacturer China"
+slogan = "Aluminum Casting Manufacturer in China — Gravity, Sand & Low Pressure Casting with In-House CNC Machining"
+
+[de]
+name = "Alucastor"
+description = "Alucastor ist ein Aluminiumgusshersteller in China, spezialisiert auf Kokillenguss, Sandguss, Niederdruckguss, präzise CNC-Bearbeitung und Rapid Prototyping für Kunden aus Automobil, Luftfahrt, Elektronik, Robotik und neuen Energien."
+keywords = [
+  "Aluminiumguss Hersteller China",
+  "Kokillenguss",
+  "Aluminium-Sandguss",
+  "Niederdruckguss",
+  "Präzisions-CNC-Bearbeitung",
+  "Rapid Prototyping"
+]
+site_title = "Alucastor — Aluminiumguss Hersteller China"
+slogan = "Aluminiumguss aus China — Kokillenguss, Sandguss und Niederdruckguss mit eigener CNC-Bearbeitung"
+
+[ja]
+name = "Alucastor"
+description = "Alucastorは中国のアルミ鋳造メーカーです。重力金型鋳造、砂型鋳造、低圧鋳造、精密CNC加工、ラピッドプロトタイピングを提供し、自動車・航空宇宙・エレクトロニクス・ロボティクス・新エネルギー分野のお客様を支援します。"
+keywords = [
+  "中国 アルミ鋳造メーカー",
+  "重力金型鋳造",
+  "アルミ砂型鋳造",
+  "低圧鋳造",
+  "精密CNC加工",
+  "ラピッドプロトタイピング"
+]
+site_title = "Alucastor — 中国のアルミ鋳造メーカー"
+slogan = "中国のアルミ鋳造メーカー — 重力・砂型・低圧鋳造と自社CNC加工"
+
+[fr]
+name = "Alucastor"
+description = "Alucastor est un fabricant chinois de pièces moulées en aluminium spécialisé dans le moulage en coquille par gravité, le moulage au sable, la coulée basse pression, l'usinage CNC de précision et le prototypage rapide pour l'automobile, l'aéronautique, l'électronique, la robotique et les nouvelles énergies."
+keywords = [
+  "Fabricant fonderie aluminium Chine",
+  "Moulage en coquille par gravité",
+  "Moulage au sable aluminium",
+  "Coulée basse pression",
+  "Usinage CNC de précision",
+  "Prototypage rapide"
+]
+site_title = "Alucastor — Fabricant de fonderie aluminium en Chine"
+slogan = "Fonderie aluminium en Chine — gravité, sable et basse pression avec usinage CNC intégré"
+
+[es]
+name = "Alucastor"
+description = "Alucastor es un fabricante de fundición de aluminio en China especializado en fundición en coquilla por gravedad, fundición en arena, fundición a baja presión, mecanizado CNC de precisión y prototipado rápido para automoción, aeroespacial, electrónica, robótica y nuevas energías."
+keywords = [
+  "Fabricante fundición aluminio China",
+  "Fundición en coquilla por gravedad",
+  "Fundición de aluminio en arena",
+  "Fundición a baja presión",
+  "Mecanizado CNC de precisión",
+  "Prototipado rápido"
+]
+site_title = "Alucastor — Fabricante de fundición de aluminio en China"
+slogan = "Fundición de aluminio en China — gravedad, arena y baja presión con mecanizado CNC propio"

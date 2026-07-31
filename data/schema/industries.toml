@@ -1,0 +1,327 @@
+# ==========================================================================
+# industries.toml — Alucastor Industry Entity Layer [SITE LAYER]
+# ==========================================================================
+# Seven industry entities served by Alucastor:
+#
+#   1. automotive            5. robotics
+#   2. aerospace             6. new-energy
+#   3. electronics           7. consumer-products
+#   4. industrial-equipment
+#
+# Feeds:
+#   - Industry JSON-LD on /industries/<id>/ pages (schema/industry.html)
+#   - areaServed in Service JSON-LD          (schema/service.html)
+#   - ItemList "Industries Served" on home   (schema/geo-entity.html)
+#   - Homepage industries section            (sections/industries.html)
+#
+# CONTRACT (do not change):
+#   [[industries]]  language-neutral entity -> id / sort_order / url_path
+#   [<lang>.<id>]   localized text          -> name / description / applications
+#
+# Entity relationships (language-neutral):
+#   related_services -> ids in data/schema/services.toml
+# ==========================================================================
+
+
+# ==========================================================================
+# INDUSTRY CATALOG — language-neutral entity definitions
+# ==========================================================================
+
+[[industries]]
+id = "automotive"
+sort_order = 1
+url_path = "/industries/automotive/"
+translation_key = "industry-automotive"
+related_services = ["gravity-die-casting", "low-pressure-die-casting", "cnc-machining", "sand-casting", "prototype"]
+authority_url = "https://alucastor.com/automotive-aluminum-casting-parts-supplier/"
+
+[[industries]]
+id = "aerospace"
+sort_order = 2
+url_path = "/industries/aerospace/"
+translation_key = "industry-aerospace"
+related_services = ["low-pressure-die-casting", "cnc-machining", "sand-casting", "prototype"]
+
+[[industries]]
+id = "electronics"
+sort_order = 3
+url_path = "/industries/electronics/"
+translation_key = "industry-electronics"
+related_services = ["gravity-die-casting", "cnc-machining", "prototype"]
+
+[[industries]]
+id = "industrial-equipment"
+sort_order = 4
+url_path = "/industries/industrial-equipment/"
+translation_key = "industry-industrial-equipment"
+related_services = ["sand-casting", "gravity-die-casting", "cnc-machining", "low-pressure-die-casting"]
+
+[[industries]]
+id = "robotics"
+sort_order = 5
+url_path = "/industries/robotics/"
+translation_key = "industry-robotics"
+related_services = ["cnc-machining", "gravity-die-casting", "prototype"]
+
+[[industries]]
+id = "new-energy"
+sort_order = 6
+url_path = "/industries/new-energy/"
+translation_key = "industry-new-energy"
+related_services = ["low-pressure-die-casting", "gravity-die-casting", "sand-casting", "cnc-machining"]
+
+[[industries]]
+id = "consumer-products"
+sort_order = 7
+url_path = "/industries/consumer-products/"
+translation_key = "industry-consumer-products"
+related_services = ["gravity-die-casting", "cnc-machining", "prototype"]
+
+
+# ==========================================================================
+# ENGLISH (en) — full localized industry content
+# ==========================================================================
+
+[en.automotive]
+name = "Automotive"
+description = "Lightweight aluminum castings and machined components for powertrain, chassis and thermal systems, produced under IATF 16949 process discipline with PPAP documentation."
+applications = [
+  "Engine and transmission housings",
+  "Suspension knuckles and control arm brackets",
+  "Alloy wheels and hub carriers",
+  "Oil pans, water pump and thermostat housings",
+  "Turbocharger and intake manifold components",
+  "Structural body and crash-relevant brackets"
+]
+
+[en.aerospace]
+name = "Aerospace"
+description = "High-integrity aluminum castings and precision machined fittings for airframe, UAV and ground support equipment, supported by NDT inspection and full material traceability."
+applications = [
+  "Airframe structural fittings and brackets",
+  "UAV and drone frame components",
+  "Actuator and landing gear housings",
+  "Avionics enclosures and cold plates",
+  "Ground support equipment castings",
+  "Satellite and payload mounting structures"
+]
+
+[en.electronics]
+name = "Electronics"
+description = "Thermally efficient aluminum housings, heat sinks and EMI-shielding enclosures for telecom, computing and power electronics, machined and finished to appearance-critical standards."
+applications = [
+  "5G base station and RF filter housings",
+  "LED lighting heat sinks",
+  "Power inverter and converter enclosures",
+  "Server and networking equipment chassis",
+  "EMI/RFI shielding covers",
+  "Connector shells and instrument frames"
+]
+
+[en.industrial-equipment]
+name = "Industrial Equipment"
+description = "Large and medium aluminum castings for machinery builders — pump bodies, gearbox casings, compressor housings and structural frames delivered as finished, machined assemblies."
+applications = [
+  "Pump housings and impeller bodies",
+  "Gearbox and reducer casings",
+  "Compressor and blower housings",
+  "Hydraulic manifold and valve blocks",
+  "Machine tool frames and slide plates",
+  "Conveyor and material handling components"
+]
+
+[en.robotics]
+name = "Robotics"
+description = "Precision aluminum structural parts for industrial robots, cobots and automation cells, where low inertia, tight tolerances and repeatable stiffness are decisive."
+applications = [
+  "Robotic arm links and joint housings",
+  "Harmonic drive and gearbox mounting plates",
+  "End effector and gripper bodies",
+  "AGV and AMR chassis components",
+  "Linear axis carriages and brackets",
+  "Automation cell fixture plates"
+]
+
+[en.new-energy]
+name = "New Energy"
+description = "Aluminum casting and machining for EV, battery, solar and wind applications, focused on thermal performance, pressure tightness and lightweight structural integrity."
+applications = [
+  "EV battery enclosures and cooling plates",
+  "Electric motor and inverter housings",
+  "Charging pile and power module heat sinks",
+  "Solar tracker and mounting brackets",
+  "Wind turbine auxiliary castings",
+  "Energy storage system frames"
+]
+
+[en.consumer-products]
+name = "Consumer Products"
+description = "Appearance-critical aluminum components for premium consumer goods, kitchen equipment, power tools and outdoor products, finished by anodizing, polishing or powder coating."
+applications = [
+  "Power tool bodies and gear housings",
+  "Premium kitchen and cookware components",
+  "Outdoor and sporting equipment hardware",
+  "Furniture and architectural fittings",
+  "Audio and camera equipment enclosures",
+  "Personal mobility and e-bike parts"
+]
+
+
+# ==========================================================================
+# GERMAN (de) — localized industry text (architecture prepared)
+# ==========================================================================
+
+[de.automotive]
+name = "Automobilindustrie"
+description = "Leichte Aluminiumgussteile und zerspante Komponenten für Antriebsstrang, Fahrwerk und Thermomanagement nach IATF 16949."
+applications = ["Motor- und Getriebegehäuse", "Radträger und Lenkerhalter", "Aluminiumräder", "Ölwannen und Pumpengehäuse"]
+
+[de.aerospace]
+name = "Luft- und Raumfahrt"
+description = "Hochintegre Aluminiumgussteile und Präzisionsteile für Flugzellen, UAV und Bodengeräte mit vollständiger Materialrückverfolgbarkeit."
+applications = ["Strukturbeschläge", "UAV-Rahmenkomponenten", "Aktuatorgehäuse", "Avionikgehäuse"]
+
+[de.electronics]
+name = "Elektronik"
+description = "Thermisch effiziente Aluminiumgehäuse, Kühlkörper und EMV-Abschirmungen für Telekom, Computing und Leistungselektronik."
+applications = ["5G-Basisstationsgehäuse", "LED-Kühlkörper", "Wechselrichtergehäuse", "Server-Chassis"]
+
+[de.industrial-equipment]
+name = "Industrieausrüstung"
+description = "Große und mittlere Aluminiumgussteile für Maschinenbauer — Pumpengehäuse, Getriebegehäuse und Strukturrahmen."
+applications = ["Pumpengehäuse", "Getriebegehäuse", "Kompressorgehäuse", "Hydraulikblöcke"]
+
+[de.robotics]
+name = "Robotik"
+description = "Präzise Aluminium-Strukturteile für Industrieroboter, Cobots und Automatisierungszellen mit geringer Trägheit."
+applications = ["Roboterarmglieder", "Getriebeflansche", "Greiferkörper", "AGV-Chassisteile"]
+
+[de.new-energy]
+name = "Neue Energien"
+description = "Aluminiumguss und Bearbeitung für EV, Batterie, Solar und Wind mit Fokus auf Wärmeleistung und Druckdichtheit."
+applications = ["EV-Batteriegehäuse", "Motor- und Wechselrichtergehäuse", "Ladesäulen-Kühlkörper", "Solar-Halterungen"]
+
+[de.consumer-products]
+name = "Konsumgüter"
+description = "Sichtbauteile aus Aluminium für hochwertige Konsumgüter, Küchengeräte, Elektrowerkzeuge und Outdoor-Produkte."
+applications = ["Elektrowerkzeuggehäuse", "Küchen- und Kochgeschirrteile", "Outdoor-Beschläge", "Audio- und Kameragehäuse"]
+
+
+# ==========================================================================
+# JAPANESE (ja) — localized industry text (architecture prepared)
+# ==========================================================================
+
+[ja.automotive]
+name = "自動車"
+description = "パワートレイン・シャシー・熱管理系向けの軽量アルミ鋳物および機械加工部品。IATF 16949に準拠した工程管理で製造します。"
+applications = ["エンジン・トランスミッションハウジング", "ナックル・アーム用ブラケット", "アルミホイール", "オイルパン・ポンプハウジング"]
+
+[ja.aerospace]
+name = "航空宇宙"
+description = "機体・UAV・地上支援装置向けの高品位アルミ鋳物と精密加工部品。非破壊検査と完全なトレーサビリティに対応します。"
+applications = ["機体構造金具", "UAVフレーム部品", "アクチュエータハウジング", "アビオニクス筐体"]
+
+[ja.electronics]
+name = "エレクトロニクス"
+description = "通信・コンピューティング・パワーエレクトロニクス向けの高放熱アルミ筐体、ヒートシンク、EMIシールド部品。"
+applications = ["5G基地局筐体", "LEDヒートシンク", "インバータ筐体", "サーバーシャーシ"]
+
+[ja.industrial-equipment]
+name = "産業機械"
+description = "機械メーカー向けの中大型アルミ鋳物。ポンプボディ、ギヤボックス、コンプレッサーハウジング、構造フレームを供給します。"
+applications = ["ポンプハウジング", "ギヤボックスケーシング", "コンプレッサーハウジング", "油圧マニホールド"]
+
+[ja.robotics]
+name = "ロボティクス"
+description = "産業用ロボット・協働ロボット・自動化セル向けの精密アルミ構造部品。低慣性と高い剛性再現性を実現します。"
+applications = ["ロボットアームリンク", "減速機取付プレート", "グリッパ本体", "AGVシャシー部品"]
+
+[ja.new-energy]
+name = "新エネルギー"
+description = "EV・電池・太陽光・風力向けのアルミ鋳造および加工。放熱性能、耐圧性、軽量構造の両立に注力します。"
+applications = ["EVバッテリーケース", "モーター・インバータハウジング", "充電設備ヒートシンク", "太陽光架台ブラケット"]
+
+[ja.consumer-products]
+name = "民生品"
+description = "高級民生機器、厨房機器、電動工具、アウトドア製品向けの外観品質を重視したアルミ部品。"
+applications = ["電動工具ボディ", "厨房・調理器具部品", "アウトドア金具", "オーディオ・カメラ筐体"]
+
+
+# ==========================================================================
+# FRENCH (fr) — localized industry text (architecture prepared)
+# ==========================================================================
+
+[fr.automotive]
+name = "Automobile"
+description = "Pièces moulées et usinées en aluminium léger pour groupe motopropulseur, châssis et gestion thermique, sous discipline IATF 16949."
+applications = ["Carters moteur et boîte", "Fusées et supports de bras", "Jantes aluminium", "Carters d'huile et de pompe"]
+
+[fr.aerospace]
+name = "Aéronautique"
+description = "Pièces moulées aluminium à haute intégrité et ferrures usinées pour cellules, drones et équipements au sol, avec traçabilité complète."
+applications = ["Ferrures structurelles", "Composants de drones", "Carters d'actionneur", "Boîtiers avioniques"]
+
+[fr.electronics]
+name = "Électronique"
+description = "Boîtiers aluminium thermiquement performants, dissipateurs et blindages EMI pour télécoms, informatique et électronique de puissance."
+applications = ["Boîtiers de stations 5G", "Dissipateurs LED", "Boîtiers d'onduleur", "Châssis serveurs"]
+
+[fr.industrial-equipment]
+name = "Équipements industriels"
+description = "Pièces moulées aluminium moyennes et grandes pour constructeurs de machines — corps de pompe, carters et châssis."
+applications = ["Corps de pompe", "Carters de réducteur", "Carters de compresseur", "Blocs hydrauliques"]
+
+[fr.robotics]
+name = "Robotique"
+description = "Pièces structurelles aluminium de précision pour robots industriels, cobots et cellules d'automatisation."
+applications = ["Bras et liaisons robotiques", "Plaques de réducteur", "Corps de préhenseur", "Châssis AGV"]
+
+[fr.new-energy]
+name = "Nouvelles énergies"
+description = "Fonderie et usinage aluminium pour VE, batteries, solaire et éolien — performance thermique et étanchéité."
+applications = ["Boîtiers de batterie VE", "Carters moteur et onduleur", "Dissipateurs de bornes de recharge", "Supports solaires"]
+
+[fr.consumer-products]
+name = "Produits de consommation"
+description = "Composants aluminium à finition soignée pour biens de consommation premium, cuisine, outillage et produits outdoor."
+applications = ["Corps d'outillage électroportatif", "Pièces de cuisine", "Ferrures outdoor", "Boîtiers audio et photo"]
+
+
+# ==========================================================================
+# SPANISH (es) — localized industry text (architecture prepared)
+# ==========================================================================
+
+[es.automotive]
+name = "Automoción"
+description = "Piezas fundidas y mecanizadas de aluminio ligero para powertrain, chasis y gestión térmica, bajo disciplina IATF 16949."
+applications = ["Carcasas de motor y transmisión", "Manguetas y soportes de brazo", "Llantas de aleación", "Cárteres y carcasas de bomba"]
+
+[es.aerospace]
+name = "Aeroespacial"
+description = "Piezas fundidas de aluminio de alta integridad y herrajes mecanizados para fuselaje, UAV y equipos de tierra, con trazabilidad total."
+applications = ["Herrajes estructurales", "Componentes de dron", "Carcasas de actuador", "Cajas de aviónica"]
+
+[es.electronics]
+name = "Electrónica"
+description = "Carcasas de aluminio térmicamente eficientes, disipadores y blindajes EMI para telecomunicaciones, computación y electrónica de potencia."
+applications = ["Carcasas de estaciones 5G", "Disipadores LED", "Cajas de inversor", "Chasis de servidor"]
+
+[es.industrial-equipment]
+name = "Equipamiento industrial"
+description = "Piezas fundidas de aluminio medianas y grandes para fabricantes de maquinaria — cuerpos de bomba, carcasas y bastidores."
+applications = ["Carcasas de bomba", "Carcasas de reductor", "Carcasas de compresor", "Bloques hidráulicos"]
+
+[es.robotics]
+name = "Robótica"
+description = "Piezas estructurales de aluminio de precisión para robots industriales, cobots y celdas de automatización."
+applications = ["Eslabones de brazo robótico", "Placas de reductor", "Cuerpos de pinza", "Chasis de AGV"]
+
+[es.new-energy]
+name = "Nuevas energías"
+description = "Fundición y mecanizado de aluminio para VE, baterías, solar y eólica — rendimiento térmico y estanqueidad."
+applications = ["Cajas de batería VE", "Carcasas de motor e inversor", "Disipadores de cargadores", "Soportes solares"]
+
+[es.consumer-products]
+name = "Productos de consumo"
+description = "Componentes de aluminio con acabado estético para bienes de consumo premium, cocina, herramientas y productos outdoor."
+applications = ["Cuerpos de herramienta eléctrica", "Piezas de cocina", "Herrajes outdoor", "Cajas de audio y cámara"]

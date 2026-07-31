@@ -1,0 +1,37 @@
+# ==========================================================================
+# menus.ja.toml — Alucastor (ja navigation)
+# ==========================================================================
+# Multilingual architecture is prepared: translated pages are linked with
+# `translationKey`. Until a page is translated, the menu points to the
+# canonical English URL so no navigation link is ever broken.
+# ==========================================================================
+
+[[main]]
+  name = "ホーム"
+  url = "/ja/"
+  weight = 1
+
+[[main]]
+  name = "鋳造サービス"
+  url = "/services/"
+  weight = 2
+
+[[main]]
+  name = "材料"
+  url = "/materials/"
+  weight = 3
+
+[[main]]
+  name = "産業分野"
+  url = "/industries/"
+  weight = 4
+
+[[main]]
+  name = "ブログ"
+  url = "/blog/"
+  weight = 5
+
+[[main]]
+  name = "お問い合わせ"
+  url = "/contact/"
+  weight = 6

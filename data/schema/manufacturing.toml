@@ -1,0 +1,158 @@
+# ==========================================================================
+# manufacturing.toml — Alucastor Manufacturing Capabilities [SITE LAYER]
+# ==========================================================================
+# Feeds:
+#   - ManufacturingBusiness "knowsAbout" and "owns"  (schema/manufacturing.html)
+#   - Homepage capabilities section                  (sections/capabilities.html)
+#   - Homepage process flow                          (sections/process.html)
+#   - Technical specification section                (sections/specification.html)
+#
+# Aligned with the five Alucastor service entities in services.toml.
+# ==========================================================================
+
+# --- Language-neutral equipment & process identifiers ---
+
+[equipment]
+key_equipment = [
+  "H13 Permanent Mold Tooling Shop",
+  "Gravity Die Casting Cells",
+  "Low Pressure Die Casting Machines",
+  "Resin Sand Molding Line",
+  "3D Sand Printing",
+  "Aluminum Melting & Degassing Furnaces",
+  "T6 Heat Treatment Furnaces",
+  "3/4/5-Axis CNC Machining Centres",
+  "CNC Turning Centres",
+  "Zeiss CMM & Spectrometer",
+  "X-Ray and Dye Penetrant NDT",
+  "Helium / Air Leak Test Benches"
+]
+
+[processes]
+core_processes = [
+  "dfm-review",
+  "tooling-design",
+  "melting-degassing",
+  "casting",
+  "heat-treatment",
+  "cnc-machining",
+  "surface-finishing",
+  "quality-inspection"
+]
+
+[capacity]
+annual_output_tons = 3000
+casting_machines = 28
+cnc_machines = 36
+sample_lead_time_days = 15
+factory_area_sqm = 12000
+
+
+# ==========================================================================
+# LOCALIZED CAPABILITY TEXT
+# ==========================================================================
+
+[en]
+knows_about = [
+  "Gravity Die Casting in reusable H13 permanent molds",
+  "Aluminum Sand Casting with resin, green and 3D printed sand molds",
+  "Low Pressure Die Casting for high-integrity, T6-treatable parts",
+  "Precision CNC Machining: 3/4/5-axis milling, turning and surface finishing",
+  "Rapid Prototyping via CNC prototype and casting prototype routes",
+  "Aluminum alloy metallurgy: ADC12, A380, A356, AlSi7Mg, AlSi10Mg, 6061, 7075",
+  "T5 / T6 heat treatment and mechanical property control",
+  "Quality assurance: CMM inspection, spectrometry, X-ray and leak testing"
+]
+capabilities_description = "Alucastor runs tooling, melting, casting, heat treatment, CNC machining, surface finishing and inspection under one roof in Dongguan, China — so a single partner is accountable for the finished aluminum component."
+materials_primary = ["ADC12", "A380", "A356", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+process_types = [
+  "Gravity Die Casting",
+  "Aluminum Sand Casting",
+  "Low Pressure Die Casting",
+  "Precision CNC Machining",
+  "Rapid Prototyping"
+]
+
+[de]
+knows_about = [
+  "Kokillenguss in wiederverwendbaren H13-Dauerformen",
+  "Aluminium-Sandguss mit Harz-, Nass- und 3D-gedruckten Sandformen",
+  "Niederdruckguss für hochintegre, T6-behandelbare Teile",
+  "Präzisions-CNC-Bearbeitung: 3/4/5-Achs-Fräsen, Drehen, Oberflächenveredelung",
+  "Rapid Prototyping über CNC- und Gussprototypen",
+  "Aluminiumlegierungen: ADC12, A380, A356, AlSi7Mg, AlSi10Mg, 6061, 7075",
+  "T5/T6-Wärmebehandlung und Kontrolle mechanischer Eigenschaften",
+  "Qualitätssicherung: CMM, Spektrometrie, Röntgen und Dichtheitsprüfung"
+]
+capabilities_description = "Alucastor vereint Werkzeugbau, Schmelze, Guss, Wärmebehandlung, CNC-Bearbeitung, Oberflächenveredelung und Prüfung unter einem Dach in Dongguan, China."
+materials_primary = ["ADC12", "A380", "A356", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+process_types = [
+  "Kokillenguss",
+  "Aluminium-Sandguss",
+  "Niederdruckguss",
+  "Präzisions-CNC-Bearbeitung",
+  "Rapid Prototyping"
+]
+
+[ja]
+knows_about = [
+  "再利用可能なH13金型による重力鋳造",
+  "樹脂砂・生砂・3Dプリント砂型によるアルミ砂型鋳造",
+  "T6熱処理対応の高品位低圧鋳造",
+  "精密CNC加工：3/4/5軸フライス、旋盤、表面処理",
+  "CNC試作および鋳造試作によるラピッドプロトタイピング",
+  "アルミ合金：ADC12、A380、A356、AlSi7Mg、AlSi10Mg、6061、7075",
+  "T5/T6熱処理と機械的特性の管理",
+  "品質保証：三次元測定、分光分析、X線検査、漏れ試験"
+]
+capabilities_description = "Alucastorは中国・東莞の自社工場で、金型製作から溶解、鋳造、熱処理、CNC加工、表面処理、検査までを一貫して行います。"
+materials_primary = ["ADC12", "A380", "A356", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+process_types = [
+  "重力金型鋳造",
+  "アルミ砂型鋳造",
+  "低圧鋳造",
+  "精密CNC加工",
+  "ラピッドプロトタイピング"
+]
+
+[fr]
+knows_about = [
+  "Moulage en coquille par gravité en moules permanents H13",
+  "Moulage au sable aluminium : sable à prise résine, sable vert et sable imprimé 3D",
+  "Coulée basse pression pour pièces à haute intégrité traitables T6",
+  "Usinage CNC de précision : fraisage 3/4/5 axes, tournage et finition",
+  "Prototypage rapide par voie CNC et par voie fonderie",
+  "Alliages d'aluminium : ADC12, A380, A356, AlSi7Mg, AlSi10Mg, 6061, 7075",
+  "Traitement thermique T5/T6 et maîtrise des propriétés mécaniques",
+  "Assurance qualité : MMT, spectrométrie, radiographie et test d'étanchéité"
+]
+capabilities_description = "Alucastor réunit outillage, fusion, fonderie, traitement thermique, usinage CNC, finition et contrôle sous un même toit à Dongguan, en Chine."
+materials_primary = ["ADC12", "A380", "A356", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+process_types = [
+  "Moulage en coquille par gravité",
+  "Moulage au sable aluminium",
+  "Coulée basse pression",
+  "Usinage CNC de précision",
+  "Prototypage rapide"
+]
+
+[es]
+knows_about = [
+  "Fundición en coquilla por gravedad en moldes permanentes H13",
+  "Fundición de aluminio en arena: arena de resina, arena verde y arena impresa en 3D",
+  "Fundición a baja presión para piezas de alta integridad tratables T6",
+  "Mecanizado CNC de precisión: fresado 3/4/5 ejes, torneado y acabado",
+  "Prototipado rápido por vía CNC y por vía fundición",
+  "Aleaciones de aluminio: ADC12, A380, A356, AlSi7Mg, AlSi10Mg, 6061, 7075",
+  "Tratamiento térmico T5/T6 y control de propiedades mecánicas",
+  "Garantía de calidad: CMM, espectrometría, rayos X y prueba de estanqueidad"
+]
+capabilities_description = "Alucastor integra utillaje, fusión, fundición, tratamiento térmico, mecanizado CNC, acabado e inspección bajo un mismo techo en Dongguan, China."
+materials_primary = ["ADC12", "A380", "A356", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+process_types = [
+  "Fundición en coquilla por gravedad",
+  "Fundición de aluminio en arena",
+  "Fundición a baja presión",
+  "Mecanizado CNC de precisión",
+  "Prototipado rápido"
+]

@@ -1,0 +1,383 @@
+# ==========================================================================
+# products.toml — Alucastor Material Entity Layer [SITE LAYER]
+# ==========================================================================
+# This file is the template's "Product Categories & Material Specifications"
+# layer. Alucastor uses it as the ALUMINUM MATERIAL entity layer, so material
+# pages are emitted as Product JSON-LD by the existing schema engine
+# (layouts/partials/schema/product.html) with no new schema system.
+#
+#   1. aluminum-alloy           — Aluminum Alloy (family entity)
+#   2. adc12-aluminum           — ADC12 Aluminum
+#   3. a380-aluminum            — A380 Aluminum
+#   4. aluminum-silicon-alloy   — Aluminum Silicon Alloy
+#   5. 6061-aluminum            — 6061 Aluminum
+#   6. 7075-aluminum            — 7075 Aluminum
+#
+# CONTRACT (do not change):
+#   [[products]]   language-neutral entity -> id / category / url_path
+#                  `url_path` MUST equal the content directory path.
+#   [<lang>.<id>]  localized entity text   -> name / description /
+#                                             key_properties / properties /
+#                                             applications
+#
+# Entity relationships (language-neutral):
+#   related_services -> ids in data/schema/services.toml
+# ==========================================================================
+
+
+# ==========================================================================
+# MATERIAL CATALOG — language-neutral entity definitions
+# ==========================================================================
+
+# --- Material 1: Aluminum Alloy (family entity) ---------------------------
+[[products]]
+id = "aluminum-alloy"
+category = "Aluminum Casting Alloy"
+material_family = "Aluminum Alloy"
+material_grades = ["A356", "A380", "ADC12", "AlSi7Mg", "AlSi10Mg", "6061", "7075"]
+alloy_designations = ["ASTM B85 / B26", "JIS H5302", "EN AC-4xxxx", "GB/T 1173"]
+sort_order = 1
+url_path = "/materials/aluminum-alloy/"
+translation_key = "material-aluminum-alloy"
+related_services = ["gravity-die-casting", "sand-casting", "low-pressure-die-casting", "cnc-machining", "prototype"]
+image = "https://alucastor.com/wp-content/uploads/2024/03/aluminium-casting-manufacturer.png"
+
+# --- Material 2: ADC12 Aluminum -------------------------------------------
+[[products]]
+id = "adc12-aluminum"
+category = "Aluminum Casting Alloy"
+material_family = "ADC12 Aluminum"
+material_grades = ["ADC12", "A383 equivalent", "YL113"]
+alloy_designations = ["JIS H5302 ADC12", "ASTM A383", "GB YL113"]
+sort_order = 2
+url_path = "/materials/adc12-aluminum/"
+translation_key = "material-adc12-aluminum"
+related_services = ["gravity-die-casting", "cnc-machining", "prototype"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/Gravity-Die-Casting-Parts.webp"
+
+# --- Material 3: A380 Aluminum --------------------------------------------
+[[products]]
+id = "a380-aluminum"
+category = "Aluminum Casting Alloy"
+material_family = "A380 Aluminum"
+material_grades = ["A380", "A380.0", "ADC10 equivalent"]
+alloy_designations = ["ASTM B85 A380", "UNS A03800", "JIS ADC10"]
+sort_order = 3
+url_path = "/materials/a380-aluminum/"
+translation_key = "material-a380-aluminum"
+related_services = ["gravity-die-casting", "sand-casting", "cnc-machining"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/Gravity-Die-Casting-Parts.webp"
+
+# --- Material 4: Aluminum Silicon Alloy -----------------------------------
+[[products]]
+id = "aluminum-silicon-alloy"
+category = "Aluminum Casting Alloy"
+material_family = "Aluminum Silicon Alloy"
+material_grades = ["AlSi7Mg", "AlSi10Mg", "AlSi12", "A356.2"]
+alloy_designations = ["EN AC-42000", "EN AC-43000", "EN AC-44100", "ASTM A356"]
+sort_order = 4
+url_path = "/materials/aluminum-silicon-alloy/"
+translation_key = "material-aluminum-silicon-alloy"
+related_services = ["low-pressure-die-casting", "sand-casting", "gravity-die-casting", "prototype"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/low-pressure-die-casting-parts.webp"
+
+# --- Material 5: 6061 Aluminum --------------------------------------------
+[[products]]
+id = "6061-aluminum"
+category = "Wrought Aluminum Alloy"
+material_family = "6061 Aluminum"
+material_grades = ["6061-T6", "6061-T651", "6061-T4"]
+alloy_designations = ["EN AW-6061", "UNS A96061", "GB 6061"]
+sort_order = 5
+url_path = "/materials/6061-aluminum/"
+translation_key = "material-6061-aluminum"
+related_services = ["cnc-machining", "prototype"]
+image = "https://alucastor.com/wp-content/uploads/2025/03/High-Precision-CNC-Machining.png"
+
+# --- Material 6: 7075 Aluminum --------------------------------------------
+[[products]]
+id = "7075-aluminum"
+category = "Wrought Aluminum Alloy"
+material_family = "7075 Aluminum"
+material_grades = ["7075-T6", "7075-T651", "7075-T7351"]
+alloy_designations = ["EN AW-7075", "UNS A97075", "AMS 4045"]
+sort_order = 6
+url_path = "/materials/7075-aluminum/"
+translation_key = "material-7075-aluminum"
+related_services = ["cnc-machining", "prototype"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/CNC-Machining-Factory.webp"
+
+
+# ==========================================================================
+# ENGLISH (en) — full localized material content
+# ==========================================================================
+
+[en.aluminum-alloy]
+name = "Aluminum Alloy"
+description = "The complete family of casting and wrought aluminum alloys Alucastor processes in-house, selected per application for strength, castability, corrosion resistance, thermal conductivity and machinability."
+key_properties = "Density 2.66 – 2.81 g/cm³, tensile strength 150 – 570 MPa, excellent corrosion resistance, high thermal and electrical conductivity, fully recyclable"
+properties = [
+  "Density: 2.66 – 2.81 g/cm³ (roughly one third of steel)",
+  "Tensile strength: 150 – 570 MPa depending on alloy and temper",
+  "Thermal conductivity: 96 – 167 W/m·K",
+  "Excellent natural corrosion resistance via passive oxide layer",
+  "Non-magnetic and non-sparking",
+  "100 % recyclable at approximately 5 % of primary energy cost"
+]
+applications = [
+  "Structural and load-bearing castings",
+  "Thermal management and heat sink components",
+  "Lightweight automotive and EV assemblies",
+  "Electronic and telecom enclosures",
+  "Industrial machinery housings"
+]
+
+[en.adc12-aluminum]
+name = "ADC12 Aluminum"
+description = "ADC12 is the most widely specified aluminum die casting alloy — an Al-Si-Cu alloy offering outstanding castability, dimensional stability and cost efficiency for thin-wall, high-volume components."
+key_properties = "Si 9.6–12.0 %, Cu 1.5–3.5 %, tensile strength 228–310 MPa, hardness 80–90 HB, excellent fluidity and thin-wall filling"
+properties = [
+  "Chemical composition: Si 9.6 – 12.0 %, Cu 1.5 – 3.5 %, Fe ≤ 1.3 %",
+  "Tensile strength: 228 – 310 MPa",
+  "Yield strength: 150 – 170 MPa",
+  "Brinell hardness: 80 – 90 HB",
+  "Melting range: 515 – 582 °C",
+  "Excellent fluidity — supports wall thickness down to 1.0 mm",
+  "Good machinability and dimensional stability",
+  "Not recommended for T6 heat treatment (copper content)"
+]
+applications = [
+  "Automotive engine and transmission covers",
+  "Electronic housings and connector shells",
+  "Power tool and appliance bodies",
+  "Telecom heat sinks and RF enclosures",
+  "Thin-wall structural brackets"
+]
+
+[en.a380-aluminum]
+name = "A380 Aluminum"
+description = "A380 is a general-purpose Al-Si-Cu casting alloy combining strength, pressure tightness and thermal stability — the industry workhorse for structural housings that must perform at elevated temperature."
+key_properties = "Si 7.5–9.5 %, Cu 3.0–4.0 %, tensile strength 315–330 MPa, hardness 80 HB, excellent pressure tightness and elevated-temperature strength"
+properties = [
+  "Chemical composition: Si 7.5 – 9.5 %, Cu 3.0 – 4.0 %, Fe ≤ 1.3 %",
+  "Tensile strength: 315 – 330 MPa",
+  "Yield strength: 160 – 165 MPa",
+  "Elongation: 3 – 4 %",
+  "Brinell hardness: approximately 80 HB",
+  "Melting range: 540 – 595 °C",
+  "Excellent pressure tightness for fluid-carrying parts",
+  "Retains strength at elevated service temperature"
+]
+applications = [
+  "Gearbox and transmission housings",
+  "Hydraulic and pneumatic valve bodies",
+  "Engine brackets and mounting plates",
+  "Pump casings and manifold blocks",
+  "Industrial equipment frames"
+]
+
+[en.aluminum-silicon-alloy]
+name = "Aluminum Silicon Alloy"
+description = "Hypoeutectic Al-Si alloys such as AlSi7Mg, AlSi10Mg and A356 deliver the best combination of castability, weldability and post-cast mechanical properties, and respond exceptionally well to T6 heat treatment."
+key_properties = "Si 6.5–12.0 %, Mg 0.25–0.45 %, tensile strength after T6 up to 320 MPa, elongation up to 12 %, fully weldable and heat-treatable"
+properties = [
+  "Chemical composition: Si 6.5 – 12.0 %, Mg 0.25 – 0.45 %, low Cu",
+  "As-cast tensile strength: 160 – 200 MPa",
+  "T6 tensile strength: 280 – 320 MPa",
+  "T6 elongation: 8 – 12 %",
+  "Outstanding fluidity and low shrinkage porosity",
+  "Fully weldable — suitable for fabricated assemblies",
+  "Superior corrosion resistance versus copper-bearing alloys",
+  "Preferred alloy family for low pressure die casting"
+]
+applications = [
+  "Automotive alloy wheels and suspension parts",
+  "EV battery enclosures and motor housings",
+  "Cylinder heads and intake manifolds",
+  "Aerospace and UAV structural castings",
+  "Safety-critical load-bearing components"
+]
+
+[en."6061-aluminum"]
+name = "6061 Aluminum"
+description = "6061 is the most versatile wrought aluminum alloy for machined parts — an Al-Mg-Si alloy with an excellent balance of strength, weldability, corrosion resistance and anodizing quality."
+key_properties = "Tensile strength 310 MPa (T6), yield 276 MPa, hardness 95 HB, excellent machinability, weldability and anodizing response"
+properties = [
+  "Chemical composition: Mg 0.8 – 1.2 %, Si 0.4 – 0.8 %, Cu 0.15 – 0.40 %",
+  "Tensile strength (T6): 310 MPa",
+  "Yield strength (T6): 276 MPa",
+  "Elongation: 12 – 17 %",
+  "Brinell hardness: approximately 95 HB",
+  "Excellent machinability with clean chip breaking",
+  "Readily weldable by TIG and MIG",
+  "Uniform, high-quality anodized finish"
+]
+applications = [
+  "CNC machined prototypes and production parts",
+  "Robotic frames, plates and brackets",
+  "Electronic and instrument enclosures",
+  "Optical and semiconductor equipment parts",
+  "Marine and architectural hardware"
+]
+
+[en."7075-aluminum"]
+name = "7075 Aluminum"
+description = "7075 is a high-strength Al-Zn-Mg-Cu aerospace alloy with a strength-to-weight ratio comparable to many steels, specified for highly stressed structural components and precision tooling."
+key_properties = "Tensile strength 572 MPa (T6), yield 503 MPa, hardness 150 HB, highest strength-to-weight ratio of common aluminum alloys"
+properties = [
+  "Chemical composition: Zn 5.1 – 6.1 %, Mg 2.1 – 2.9 %, Cu 1.2 – 2.0 %",
+  "Tensile strength (T6): 572 MPa",
+  "Yield strength (T6): 503 MPa",
+  "Elongation: 5 – 11 %",
+  "Brinell hardness: approximately 150 HB",
+  "Excellent fatigue strength for cyclic loading",
+  "Good machinability with excellent surface finish",
+  "Limited weldability — mechanical fastening preferred"
+]
+applications = [
+  "Aerospace structural fittings and airframe parts",
+  "High-load robotic and automation components",
+  "Motorsport and performance vehicle parts",
+  "Precision jigs, fixtures and mold plates",
+  "Defence and high-stress industrial hardware"
+]
+
+
+# ==========================================================================
+# GERMAN (de) — localized material text (architecture prepared)
+# ==========================================================================
+
+[de.aluminum-alloy]
+name = "Aluminiumlegierung"
+description = "Die komplette Familie der Guss- und Knetaluminiumlegierungen, die Alucastor im eigenen Haus verarbeitet — je nach Anwendung ausgewählt."
+key_properties = "Dichte 2,66 – 2,81 g/cm³, Zugfestigkeit 150 – 570 MPa, ausgezeichnete Korrosionsbeständigkeit"
+
+[de.adc12-aluminum]
+name = "ADC12 Aluminium"
+description = "ADC12 ist die am häufigsten eingesetzte Aluminium-Druckgusslegierung mit hervorragender Gießbarkeit und Maßhaltigkeit."
+key_properties = "Si 9,6–12,0 %, Cu 1,5–3,5 %, Zugfestigkeit 228–310 MPa, Härte 80–90 HB"
+
+[de.a380-aluminum]
+name = "A380 Aluminium"
+description = "A380 ist eine universelle Al-Si-Cu-Gusslegierung mit Festigkeit, Druckdichtheit und Warmfestigkeit."
+key_properties = "Si 7,5–9,5 %, Cu 3,0–4,0 %, Zugfestigkeit 315–330 MPa, Härte ca. 80 HB"
+
+[de.aluminum-silicon-alloy]
+name = "Aluminium-Silizium-Legierung"
+description = "Untereutektische Al-Si-Legierungen wie AlSi7Mg und AlSi10Mg bieten beste Gießbarkeit, Schweißbarkeit und T6-Eigenschaften."
+key_properties = "Si 6,5–12,0 %, Mg 0,25–0,45 %, Zugfestigkeit nach T6 bis 320 MPa"
+
+[de."6061-aluminum"]
+name = "6061 Aluminium"
+description = "6061 ist die vielseitigste Knetlegierung für zerspante Teile — Festigkeit, Schweißbarkeit und hervorragende Eloxierqualität."
+key_properties = "Zugfestigkeit 310 MPa (T6), Streckgrenze 276 MPa, Härte 95 HB"
+
+[de."7075-aluminum"]
+name = "7075 Aluminium"
+description = "7075 ist eine hochfeste Al-Zn-Mg-Cu-Luftfahrtlegierung für hoch beanspruchte Strukturbauteile."
+key_properties = "Zugfestigkeit 572 MPa (T6), Streckgrenze 503 MPa, Härte 150 HB"
+
+
+# ==========================================================================
+# JAPANESE (ja) — localized material text (architecture prepared)
+# ==========================================================================
+
+[ja.aluminum-alloy]
+name = "アルミニウム合金"
+description = "Alucastorが自社で扱う鋳造用・展伸用アルミ合金の総称。用途に応じて最適な材質を選定します。"
+key_properties = "密度 2.66–2.81 g/cm³、引張強さ 150–570 MPa、優れた耐食性"
+
+[ja.adc12-aluminum]
+name = "ADC12 アルミニウム"
+description = "ADC12は最も広く採用されるアルミダイカスト合金で、優れた鋳造性と寸法安定性を備えます。"
+key_properties = "Si 9.6–12.0 %、Cu 1.5–3.5 %、引張強さ 228–310 MPa、硬度 80–90 HB"
+
+[ja.a380-aluminum]
+name = "A380 アルミニウム"
+description = "A380は強度・耐圧性・高温安定性を兼ね備えた汎用Al-Si-Cu鋳造合金です。"
+key_properties = "Si 7.5–9.5 %、Cu 3.0–4.0 %、引張強さ 315–330 MPa、硬度 約80 HB"
+
+[ja.aluminum-silicon-alloy]
+name = "アルミシリコン合金"
+description = "AlSi7Mg・AlSi10Mgなどの亜共晶Al-Si合金は、鋳造性・溶接性・T6熱処理特性に優れます。"
+key_properties = "Si 6.5–12.0 %、Mg 0.25–0.45 %、T6後の引張強さ 最大320 MPa"
+
+[ja."6061-aluminum"]
+name = "6061 アルミニウム"
+description = "6061は機械加工部品向けで最も汎用性の高い展伸用合金。強度・溶接性・陽極酸化品質に優れます。"
+key_properties = "引張強さ 310 MPa (T6)、耐力 276 MPa、硬度 95 HB"
+
+[ja."7075-aluminum"]
+name = "7075 アルミニウム"
+description = "7075は高強度のAl-Zn-Mg-Cu系航空機用合金で、高負荷構造部品に採用されます。"
+key_properties = "引張強さ 572 MPa (T6)、耐力 503 MPa、硬度 150 HB"
+
+
+# ==========================================================================
+# FRENCH (fr) — localized material text (architecture prepared)
+# ==========================================================================
+
+[fr.aluminum-alloy]
+name = "Alliage d'aluminium"
+description = "L'ensemble des alliages d'aluminium de fonderie et corroyés transformés en interne par Alucastor, choisis selon l'application."
+key_properties = "Densité 2,66 – 2,81 g/cm³, résistance 150 – 570 MPa, excellente tenue à la corrosion"
+
+[fr.adc12-aluminum]
+name = "Aluminium ADC12"
+description = "ADC12 est l'alliage de moulage sous pression le plus répandu, offrant coulabilité et stabilité dimensionnelle."
+key_properties = "Si 9,6–12,0 %, Cu 1,5–3,5 %, résistance 228–310 MPa, dureté 80–90 HB"
+
+[fr.a380-aluminum]
+name = "Aluminium A380"
+description = "A380 est un alliage Al-Si-Cu polyvalent alliant résistance, étanchéité sous pression et tenue à chaud."
+key_properties = "Si 7,5–9,5 %, Cu 3,0–4,0 %, résistance 315–330 MPa, dureté env. 80 HB"
+
+[fr.aluminum-silicon-alloy]
+name = "Alliage aluminium-silicium"
+description = "Les alliages hypoeutectiques AlSi7Mg et AlSi10Mg offrent coulabilité, soudabilité et excellentes propriétés après T6."
+key_properties = "Si 6,5–12,0 %, Mg 0,25–0,45 %, résistance après T6 jusqu'à 320 MPa"
+
+[fr."6061-aluminum"]
+name = "Aluminium 6061"
+description = "6061 est l'alliage corroyé le plus polyvalent pour l'usinage — résistance, soudabilité et anodisation de qualité."
+key_properties = "Résistance 310 MPa (T6), limite élastique 276 MPa, dureté 95 HB"
+
+[fr."7075-aluminum"]
+name = "Aluminium 7075"
+description = "7075 est un alliage aéronautique Al-Zn-Mg-Cu à haute résistance pour pièces structurelles fortement sollicitées."
+key_properties = "Résistance 572 MPa (T6), limite élastique 503 MPa, dureté 150 HB"
+
+
+# ==========================================================================
+# SPANISH (es) — localized material text (architecture prepared)
+# ==========================================================================
+
+[es.aluminum-alloy]
+name = "Aleación de aluminio"
+description = "La familia completa de aleaciones de aluminio de fundición y forja que Alucastor procesa internamente, seleccionadas según la aplicación."
+key_properties = "Densidad 2,66 – 2,81 g/cm³, resistencia 150 – 570 MPa, excelente resistencia a la corrosión"
+
+[es.adc12-aluminum]
+name = "Aluminio ADC12"
+description = "ADC12 es la aleación de fundición a presión más utilizada, con excelente colabilidad y estabilidad dimensional."
+key_properties = "Si 9,6–12,0 %, Cu 1,5–3,5 %, resistencia 228–310 MPa, dureza 80–90 HB"
+
+[es.a380-aluminum]
+name = "Aluminio A380"
+description = "A380 es una aleación Al-Si-Cu polivalente que combina resistencia, estanqueidad y estabilidad a alta temperatura."
+key_properties = "Si 7,5–9,5 %, Cu 3,0–4,0 %, resistencia 315–330 MPa, dureza aprox. 80 HB"
+
+[es.aluminum-silicon-alloy]
+name = "Aleación aluminio-silicio"
+description = "Las aleaciones hipoeutécticas AlSi7Mg y AlSi10Mg ofrecen colabilidad, soldabilidad y excelentes propiedades tras T6."
+key_properties = "Si 6,5–12,0 %, Mg 0,25–0,45 %, resistencia tras T6 hasta 320 MPa"
+
+[es."6061-aluminum"]
+name = "Aluminio 6061"
+description = "6061 es la aleación forjada más versátil para piezas mecanizadas — resistencia, soldabilidad y anodizado de calidad."
+key_properties = "Resistencia 310 MPa (T6), límite elástico 276 MPa, dureza 95 HB"
+
+[es."7075-aluminum"]
+name = "Aluminio 7075"
+description = "7075 es una aleación aeronáutica Al-Zn-Mg-Cu de alta resistencia para componentes estructurales muy solicitados."
+key_properties = "Resistencia 572 MPa (T6), límite elástico 503 MPa, dureza 150 HB"

@@ -1,0 +1,151 @@
+{{- /* schema/service.html — Service JSON-LD
+   Data source: data/schema/services.toml + data/schema/industries.toml
+   Called by: schema/render.html (service pages, detected via url_path)
+   Front Matter override: schema.about, schema.mentions
+
+   Emitted properties (all driven by the existing data layer — no new engine):
+     name / description / url          <- [<lang>.<id>] name, description
+     serviceType                       <- [[services]] schema_type
+     category                          <- [[services]] category
+     provider                          -> #organization node
+     areaServed                        <- [[services]] related_industries
+                                          (falls back to every industry)
+     serviceOutput                     <- [<lang>.<id>] applications
+     hasOfferCatalog                   <- [<lang>.<id>] capabilities
+     additionalProperty                <- materials / processes /
+                                          manufacturing_process
+   Every optional block is guarded, so a language that is not fully
+   translated yet still emits valid JSON-LD. */ -}}
+
+{{- $lang := .Page.Language.Lang -}}
+{{- $services := hugo.Data.schema.services -}}
+{{- $industries := hugo.Data.schema.industries -}}
+{{- $matchedID := .Scratch.Get "schema_matched_service" -}}
+
+{{- $serviceEntry := "" -}}
+{{- range $services.services -}}
+  {{- if eq .id $matchedID -}}
+    {{- $serviceEntry = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $svcLocalized := index $services $lang -}}
+{{- $svcText := index $svcLocalized $matchedID -}}
+
+{{- /* Resolve areaServed: per-service related_industries, else all industries */ -}}
+{{- $indLocalized := index $industries $lang -}}
+{{- $areaIDs := $serviceEntry.related_industries -}}
+{{- if not $areaIDs -}}
+  {{- $all := slice -}}
+  {{- range $industries.industries -}}{{- $all = $all | append .id -}}{{- end -}}
+  {{- $areaIDs = $all -}}
+{{- end -}}
+{{- $areaNames := slice -}}
+{{- range $areaIDs -}}
+  {{- with index $indLocalized . -}}
+    {{- with .name -}}{{- $areaNames = $areaNames | append . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ printf "%s#service" .Permalink | safeJS }}",
+  "name": "{{ $svcText.name | safeJS }}",
+  {{ with $svcText.description }}"description": "{{ . | safeJS }}",{{ end }}
+  "url": "{{ .Permalink | safeJS }}",
+  "serviceType": "{{ $serviceEntry.schema_type | safeJS }}",
+  {{ with $serviceEntry.category }}"category": "{{ . | safeJS }}",{{ end }}
+  "provider": {
+    "@type": "Organization",
+    "@id": "{{ printf "%s#organization" .Site.BaseURL | safeJS }}"
+  }
+  {{- with $areaNames -}}
+  ,
+  "areaServed": [
+    {{ range $i, $n := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "Thing",
+      "name": "{{ $n | safeJS }}"
+    }
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- with $svcText.applications -}}
+  ,
+  "serviceOutput": [
+    {{ range $i, $app := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "Thing",
+      "name": "{{ $app | safeJS }}"
+    }
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- with $svcText.capabilities -}}
+  ,
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "{{ printf "%s Capabilities" $svcText.name | safeJS }}",
+    "itemListElement": [
+      {{ range $i, $cap := . -}}
+      {{- if $i }}, {{ end -}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{ $cap | safeJS }}"
+        }
+      }
+      {{- end -}}
+    ]
+  }
+  {{- end -}}
+  {{- $props := slice -}}
+  {{- with $serviceEntry.materials -}}
+    {{- $props = $props | append (dict "name" "Materials" "value" (delimit . ", ")) -}}
+  {{- end -}}
+  {{- with $serviceEntry.processes -}}
+    {{- $props = $props | append (dict "name" "Processes" "value" (delimit . ", ")) -}}
+  {{- end -}}
+  {{- with $svcText.manufacturing_process -}}
+    {{- $props = $props | append (dict "name" "Manufacturing Process" "value" (delimit . " > ")) -}}
+  {{- end -}}
+  {{- with $props -}}
+  ,
+  "additionalProperty": [
+    {{ range $i, $p := . -}}
+    {{- if $i }}, {{ end -}}
+    {
+      "@type": "PropertyValue",
+      "name": "{{ $p.name | safeJS }}",
+      "value": "{{ $p.value | safeJS }}"
+    }
+    {{- end -}}
+  ]
+  {{- end -}}
+  {{- with .Params.schema.about -}}
+  ,
+  "about": {
+    "@type": "Thing",
+    "url": "{{ . | safeJS }}"
+  }
+  {{- end -}}
+  {{- with .Params.schema.mentions -}}
+  ,
+  "mentions": [
+    {{ range $i, $m := . -}}
+    {{- if $i }}, {{ end -}}
+    {{- if (reflect.IsMap $m) -}}
+      { "@id": "{{ $m.url | safeJS }}" }
+    {{- else -}}
+      "{{ $m | safeJS }}"
+    {{- end -}}
+    {{- end -}}
+  ]
+  {{- end -}}
+}
+</script>

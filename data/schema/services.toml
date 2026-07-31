@@ -1,0 +1,397 @@
+# ==========================================================================
+# services.toml — Alucastor Service Entity Layer [SITE LAYER]
+# ==========================================================================
+# ACTUAL Alucastor manufacturing services — 5 entities only.
+#
+#   1. gravity-die-casting        — Gravity Die Casting
+#   2. sand-casting               — Aluminum Sand Casting
+#   3. low-pressure-die-casting   — Low Pressure Die Casting
+#   4. cnc-machining              — Precision CNC Machining
+#   5. prototype                  — Rapid Prototyping
+#
+# CONTRACT (do not change — consumed by the template schema engine):
+#   [[services]]   language-neutral entity   -> id / schema_type / url_path
+#                  `url_path` MUST equal the content directory path so that
+#                  layouts/partials/schema/render.html detects the page as a
+#                  service page and emits Service JSON-LD.
+#   [<lang>.<id>]  localized entity text     -> name / description / ...
+#
+# Entity relationships (language-neutral, stable across all languages):
+#   related_materials  -> ids in data/schema/products.toml
+#   related_industries -> ids in data/schema/industries.toml
+# ==========================================================================
+
+
+# ==========================================================================
+# SERVICE CATALOG — language-neutral entity definitions
+# ==========================================================================
+
+# --- Service 1: Gravity Die Casting ---------------------------------------
+[[services]]
+id = "gravity-die-casting"
+schema_type = "Gravity Die Casting"
+category = "Aluminum Casting"
+url_path = "/services/gravity-die-casting/"
+sort_order = 1
+translation_key = "service-gravity-die-casting"
+materials = ["Aluminum Alloy", "ADC12", "A380"]
+processes = ["Permanent Mold Casting", "Tilt Pour Casting", "Static Gravity Pouring"]
+related_materials = ["aluminum-alloy", "adc12-aluminum", "a380-aluminum", "aluminum-silicon-alloy"]
+related_industries = ["automotive", "industrial-equipment", "new-energy", "electronics", "robotics"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/Gravity-Die-Casting-Parts.webp"
+authority_url = "https://alucastor.com/permanent-mold-casting-services-china/"
+
+# --- Service 2: Sand Casting ----------------------------------------------
+[[services]]
+id = "sand-casting"
+schema_type = "Aluminum Sand Casting"
+category = "Aluminum Casting"
+url_path = "/services/sand-casting/"
+sort_order = 2
+translation_key = "service-sand-casting"
+materials = ["Aluminum Alloy", "A356", "A380", "Aluminum Silicon Alloy"]
+processes = ["Green Sand Casting", "Resin Sand Casting", "Shell Molding", "3D Printed Sand Molds"]
+related_materials = ["aluminum-alloy", "aluminum-silicon-alloy", "a380-aluminum"]
+related_industries = ["industrial-equipment", "new-energy", "automotive", "aerospace"]
+image = "https://alucastor.com/wp-content/uploads/2024/03/Sand-Casting-Foundry.png"
+authority_url = "https://alucastor.com/aluminum-sand-casting-services-china/"
+
+# --- Service 3: Low Pressure Die Casting ----------------------------------
+[[services]]
+id = "low-pressure-die-casting"
+schema_type = "Low Pressure Die Casting"
+category = "Aluminum Casting"
+url_path = "/services/low-pressure-die-casting/"
+sort_order = 3
+translation_key = "service-low-pressure-die-casting"
+materials = ["Aluminum Alloy", "A356", "AlSi7Mg", "AlSi10Mg"]
+processes = ["Low Pressure Filling", "Controlled Directional Solidification", "T6 Heat Treatment"]
+related_materials = ["aluminum-alloy", "aluminum-silicon-alloy", "adc12-aluminum"]
+related_industries = ["automotive", "new-energy", "aerospace", "industrial-equipment"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/low-pressure-die-casting-parts.webp"
+authority_url = "https://alucastor.com/low-pressure-die-casting-services-china/"
+
+# --- Service 4: CNC Machining ---------------------------------------------
+[[services]]
+id = "cnc-machining"
+schema_type = "Precision CNC Machining"
+category = "Precision Machining"
+url_path = "/services/cnc-machining/"
+sort_order = 4
+translation_key = "service-cnc-machining"
+materials = ["Aluminum Alloy", "6061 Aluminum", "7075 Aluminum", "ADC12", "A380"]
+processes = ["CNC Milling", "CNC Turning", "Surface Finishing"]
+related_materials = ["6061-aluminum", "7075-aluminum", "aluminum-alloy", "adc12-aluminum"]
+related_industries = ["automotive", "aerospace", "electronics", "robotics", "industrial-equipment", "new-energy"]
+image = "https://alucastor.com/wp-content/uploads/2025/03/High-Precision-CNC-Machining.png"
+authority_url = "https://alucastor.com/precision-cnc-machining-services-dongguan/"
+
+# --- Service 5: Prototype -------------------------------------------------
+[[services]]
+id = "prototype"
+schema_type = "Rapid Prototyping"
+category = "Prototyping"
+url_path = "/services/prototype/"
+sort_order = 5
+translation_key = "service-prototype"
+materials = ["Aluminum Alloy", "6061 Aluminum", "7075 Aluminum", "A356", "ADC12"]
+processes = ["CNC Prototype", "Casting Prototype"]
+related_materials = ["6061-aluminum", "7075-aluminum", "aluminum-alloy", "aluminum-silicon-alloy"]
+related_industries = ["automotive", "electronics", "robotics", "consumer-products", "new-energy"]
+image = "https://alucastor.com/wp-content/uploads/2023/03/CNC-Machining-Factory.webp"
+authority_url = "https://alucastor.com/aluminum-casting-services-china/"
+
+
+# ==========================================================================
+# ENGLISH (en) — full localized entity content
+# ==========================================================================
+
+[en.gravity-die-casting]
+name = "Gravity Die Casting"
+description = "Gravity die casting of aluminum components in reusable steel permanent molds, producing dense, pressure-tight parts with excellent mechanical properties and full heat-treat capability."
+manufacturing_process = [
+  "DFM review and casting simulation of the customer 3D model",
+  "H13 steel permanent mold design and CNC tooling manufacture",
+  "Charge melting, degassing and grain refinement of the aluminum alloy",
+  "Mold preheating and refractory coating application",
+  "Static or tilt gravity pouring under controlled melt temperature",
+  "Directional solidification and controlled mold cooling",
+  "Shakeout, gate and riser removal, shot blasting",
+  "T5 / T6 heat treatment and straightening",
+  "CNC machining of functional surfaces",
+  "Leak testing, dimensional inspection and packing"
+]
+applications = [
+  "Automotive engine and transmission housings",
+  "EV battery cooling plates and inverter housings",
+  "Hydraulic and pneumatic valve bodies",
+  "LED and industrial lighting heat sinks",
+  "Pump housings and impeller bodies",
+  "Robotic arm structural brackets"
+]
+capabilities = [
+  "Part weight range 0.05 kg – 60 kg",
+  "Wall thickness from 3.0 mm",
+  "Linear tolerance to CT6 – CT8 (ISO 8062)",
+  "As-cast surface roughness Ra 6.3 – 12.5 µm",
+  "Machined tolerance to ±0.02 mm",
+  "Tooling life 80,000 – 120,000 shots",
+  "Pressure tightness tested to 6 bar",
+  "Annual capacity 3,000+ tons"
+]
+
+[en.sand-casting]
+name = "Sand Casting"
+description = "Aluminum sand casting for large, complex and low-to-medium volume components, using resin sand, green sand and 3D printed sand molds with no hard tooling investment."
+manufacturing_process = [
+  "Pattern design review and methoding simulation",
+  "Wood, resin or 3D printed pattern and core box production",
+  "Green sand or resin (furan) sand mold preparation",
+  "Core making, core setting and mold assembly",
+  "Aluminum melting, degassing and spectrometer verification",
+  "Gravity pouring into the sand mold",
+  "Cooling, shakeout and sand reclamation",
+  "Gate cut-off, grinding and shot blasting",
+  "Heat treatment (T6) where specified",
+  "CNC machining, X-ray / dye penetrant inspection and packing"
+]
+applications = [
+  "Large industrial machine housings and frames",
+  "Wind and solar power equipment brackets",
+  "Compressor and gearbox casings",
+  "Agricultural and construction machinery parts",
+  "Pump bodies and manifold blocks",
+  "Prototype and low-volume structural castings"
+]
+capabilities = [
+  "Part weight range 0.5 kg – 500 kg",
+  "Maximum casting envelope 2,000 × 1,500 × 800 mm",
+  "Wall thickness from 4.0 mm",
+  "Linear tolerance to CT8 – CT11 (ISO 8062)",
+  "Sample lead time 10 – 15 days with no hard tooling",
+  "3D printed sand molds for zero-tooling prototypes",
+  "X-ray and dye penetrant NDT available",
+  "Economical from 1 piece to 5,000 pieces per year"
+]
+
+[en.low-pressure-die-casting]
+name = "Low Pressure Die Casting"
+description = "Low pressure die casting that fills the die from below under controlled gas pressure, delivering high-integrity, low-porosity aluminum parts suitable for T6 heat treatment and structural loading."
+manufacturing_process = [
+  "Casting feasibility study and filling / solidification simulation",
+  "Low pressure die design with riser tube and thermal management",
+  "H13 die manufacture, fitting and trial",
+  "Melt preparation, degassing and holding in the sealed furnace",
+  "Controlled low pressure filling (0.02 – 0.08 MPa) through the riser tube",
+  "Pressure held during directional solidification",
+  "Die opening, part extraction and automated trimming",
+  "T6 solution treatment, quenching and artificial ageing",
+  "CNC machining of sealing and mounting faces",
+  "Helium / air leak testing, CMM inspection and packing"
+]
+applications = [
+  "Automotive alloy wheels and suspension knuckles",
+  "EV battery enclosures and motor housings",
+  "Cylinder heads and intake manifolds",
+  "Aerospace and UAV structural brackets",
+  "High-integrity pressure vessels and valve bodies",
+  "Thermal management and cooling assemblies"
+]
+capabilities = [
+  "Part weight range 0.3 kg – 80 kg",
+  "Wall thickness from 2.5 mm",
+  "Porosity level 1 – 2 (ASTM E505)",
+  "Mechanical properties after T6: tensile 280 – 320 MPa",
+  "Elongation up to 8 – 12 %",
+  "Linear tolerance to CT6 – CT7 (ISO 8062)",
+  "Fully weldable and heat-treatable castings",
+  "Automated cells for repeatable process control"
+]
+
+[en.cnc-machining]
+name = "CNC Machining"
+description = "Precision CNC machining of aluminum castings, billet and extrusion — 3, 4 and 5-axis milling, CNC turning and surface finishing to tolerances down to ±0.005 mm."
+manufacturing_process = [
+  "Drawing and GD&T review, tolerance stack-up analysis",
+  "CAM programming, fixture and soft-jaw design",
+  "Raw material or casting blank verification",
+  "Roughing on 3 / 4 / 5-axis machining centres",
+  "Stress relief where required for tight-tolerance parts",
+  "Finish milling and CNC turning of critical features",
+  "Thread milling, tapping, reaming and deburring",
+  "Surface finishing: anodizing, powder coating, bead blasting, passivation",
+  "First article inspection (FAI) and CMM verification",
+  "SPC monitoring, cleaning and protective packing"
+]
+applications = [
+  "Machined castings for automotive powertrain",
+  "Aerospace structural fittings and housings",
+  "Electronic enclosures and heat sinks",
+  "Robotic joints, gearbox plates and end effectors",
+  "Medical and laboratory instrument frames",
+  "Optical and semiconductor equipment components"
+]
+capabilities = [
+  "3-axis, 4-axis and 5-axis CNC machining centres",
+  "CNC turning up to Ø 500 mm",
+  "Machining envelope up to 1,600 × 800 × 700 mm",
+  "Tolerance capability down to ±0.005 mm",
+  "Surface finish to Ra 0.4 µm",
+  "Zeiss CMM and 2.5D vision inspection",
+  "Anodizing, powder coating, chromating and polishing",
+  "Lights-out production with pallet automation"
+]
+
+[en.prototype]
+name = "Prototype"
+description = "Rapid prototyping for aluminum parts — CNC prototypes from solid billet and casting prototypes from 3D printed sand or soft tooling, bridging design validation and series production."
+manufacturing_process = [
+  "Design review, DFM feedback and prototype route selection",
+  "CNC prototype: direct machining from 6061 / 7075 billet",
+  "Casting prototype: 3D printed sand mold or rapid soft tooling",
+  "Melting, pouring and controlled solidification of the prototype casting",
+  "Finish machining of functional and mating surfaces",
+  "Surface finishing to production appearance standard",
+  "Dimensional report and material certificate issue",
+  "Functional / fit testing and customer design feedback loop",
+  "Design freeze and production tooling kick-off",
+  "Seamless transfer of the validated process to series production"
+]
+applications = [
+  "Design validation and functional test samples",
+  "Pre-tooling casting samples for new programmes",
+  "Bridge production before hard tooling is released",
+  "Trade show and investor demonstration parts",
+  "Fit, form and assembly verification models",
+  "Low-volume aftermarket and service parts"
+]
+capabilities = [
+  "CNC prototype lead time 5 – 7 days",
+  "Casting prototype lead time 10 – 15 days",
+  "No hard tooling investment required",
+  "1 – 100 pieces per prototype batch",
+  "Production-equivalent alloys and heat treatment",
+  "Full dimensional report with every batch",
+  "Direct migration path to gravity, low pressure or sand casting",
+  "Confidential NDA-protected engineering support"
+]
+
+
+# ==========================================================================
+# GERMAN (de) — localized entity text (architecture prepared)
+# ==========================================================================
+
+[de.gravity-die-casting]
+name = "Kokillenguss"
+description = "Kokillenguss von Aluminiumbauteilen in wiederverwendbaren Stahlformen — dichte, druckdichte Teile mit hervorragenden mechanischen Eigenschaften."
+applications = ["Motor- und Getriebegehäuse", "EV-Batteriekühlplatten", "Hydraulikventilgehäuse", "LED-Kühlkörper"]
+
+[de.sand-casting]
+name = "Sandguss"
+description = "Aluminium-Sandguss für große, komplexe Bauteile in kleinen und mittleren Stückzahlen — ohne Investition in Dauerformen."
+applications = ["Maschinengehäuse", "Windkraft-Halterungen", "Kompressorgehäuse", "Pumpenkörper"]
+
+[de.low-pressure-die-casting]
+name = "Niederdruckguss"
+description = "Niederdruckguss mit kontrollierter Formfüllung von unten — porenarme, T6-behandelbare Aluminiumteile für strukturelle Belastungen."
+applications = ["Aluminiumräder", "EV-Batteriegehäuse", "Zylinderköpfe", "Strukturhalterungen"]
+
+[de.cnc-machining]
+name = "CNC-Bearbeitung"
+description = "Präzise CNC-Bearbeitung von Aluminiumguss, Vollmaterial und Strangpressprofilen — 3-, 4- und 5-Achs-Fräsen, Drehen und Oberflächenveredelung."
+applications = ["Bearbeitete Gussteile", "Luftfahrt-Strukturteile", "Elektronikgehäuse", "Robotergelenke"]
+
+[de.prototype]
+name = "Prototypen"
+description = "Rapid Prototyping für Aluminiumteile — CNC-Prototypen aus Vollmaterial und Gussprototypen aus 3D-gedruckten Sandformen."
+applications = ["Designvalidierung", "Vorserien-Gussmuster", "Brückenfertigung", "Passform-Prüfmodelle"]
+
+
+# ==========================================================================
+# JAPANESE (ja) — localized entity text (architecture prepared)
+# ==========================================================================
+
+[ja.gravity-die-casting]
+name = "重力金型鋳造"
+description = "再利用可能な金型を用いたアルミ重力鋳造。緻密で耐圧性に優れ、優れた機械的特性と熱処理対応を実現します。"
+applications = ["エンジン・トランスミッションハウジング", "EVバッテリー冷却プレート", "油圧バルブボディ", "LEDヒートシンク"]
+
+[ja.sand-casting]
+name = "砂型鋳造"
+description = "大型・複雑形状の中小ロット部品に適したアルミ砂型鋳造。金型投資が不要です。"
+applications = ["産業機械ハウジング", "風力・太陽光ブラケット", "コンプレッサーケーシング", "ポンプボディ"]
+
+[ja.low-pressure-die-casting]
+name = "低圧鋳造"
+description = "下方から加圧充填する低圧鋳造。低ポロシティでT6熱処理が可能な高品質アルミ部品を提供します。"
+applications = ["アルミホイール", "EVバッテリーケース", "シリンダーヘッド", "構造用ブラケット"]
+
+[ja.cnc-machining]
+name = "CNC精密加工"
+description = "アルミ鋳物・丸棒・押出材の精密CNC加工。3軸・4軸・5軸フライス、旋盤加工および表面処理に対応します。"
+applications = ["鋳物の機械加工", "航空機構造部品", "電子機器筐体", "ロボット関節部品"]
+
+[ja.prototype]
+name = "試作"
+description = "アルミ部品のラピッドプロトタイピング。ビレットからのCNC試作と3Dプリント砂型による鋳造試作に対応します。"
+applications = ["設計検証サンプル", "量産前鋳造サンプル", "ブリッジ生産", "嵌合確認モデル"]
+
+
+# ==========================================================================
+# FRENCH (fr) — localized entity text (architecture prepared)
+# ==========================================================================
+
+[fr.gravity-die-casting]
+name = "Moulage en coquille par gravité"
+description = "Moulage par gravité de pièces en aluminium dans des coquilles acier réutilisables — pièces denses, étanches et traitables thermiquement."
+applications = ["Carters moteur et boîte de vitesses", "Plaques de refroidissement batterie EV", "Corps de vanne hydraulique", "Dissipateurs LED"]
+
+[fr.sand-casting]
+name = "Moulage au sable"
+description = "Moulage au sable d'aluminium pour pièces volumineuses et complexes en petites et moyennes séries, sans investissement en outillage dur."
+applications = ["Carters de machines industrielles", "Supports éolien et solaire", "Carters de compresseur", "Corps de pompe"]
+
+[fr.low-pressure-die-casting]
+name = "Coulée basse pression"
+description = "Coulée basse pression avec remplissage contrôlé par le bas — pièces aluminium à faible porosité, traitables T6 et sollicitables structurellement."
+applications = ["Jantes aluminium", "Boîtiers de batterie EV", "Culasses", "Supports structurels"]
+
+[fr.cnc-machining]
+name = "Usinage CNC"
+description = "Usinage CNC de précision de pièces moulées, barres et profilés aluminium — fraisage 3, 4 et 5 axes, tournage et finition de surface."
+applications = ["Pièces moulées usinées", "Ferrures aéronautiques", "Boîtiers électroniques", "Articulations robotiques"]
+
+[fr.prototype]
+name = "Prototypes"
+description = "Prototypage rapide de pièces aluminium — prototypes CNC dans la masse et prototypes moulés en sable imprimé 3D."
+applications = ["Validation de conception", "Échantillons moulés pré-série", "Production relais", "Maquettes de montage"]
+
+
+# ==========================================================================
+# SPANISH (es) — localized entity text (architecture prepared)
+# ==========================================================================
+
+[es.gravity-die-casting]
+name = "Fundición en coquilla por gravedad"
+description = "Fundición por gravedad de componentes de aluminio en moldes permanentes de acero — piezas densas, estancas y tratables térmicamente."
+applications = ["Carcasas de motor y transmisión", "Placas de refrigeración de baterías EV", "Cuerpos de válvula hidráulica", "Disipadores LED"]
+
+[es.sand-casting]
+name = "Fundición en arena"
+description = "Fundición de aluminio en arena para piezas grandes y complejas en series cortas y medias, sin inversión en utillaje duro."
+applications = ["Carcasas de maquinaria industrial", "Soportes eólicos y solares", "Carcasas de compresor", "Cuerpos de bomba"]
+
+[es.low-pressure-die-casting]
+name = "Fundición a baja presión"
+description = "Fundición a baja presión con llenado controlado desde abajo — piezas de aluminio de baja porosidad, tratables T6 y aptas para carga estructural."
+applications = ["Llantas de aluminio", "Cajas de batería EV", "Culatas", "Soportes estructurales"]
+
+[es.cnc-machining]
+name = "Mecanizado CNC"
+description = "Mecanizado CNC de precisión de piezas fundidas, barra y extrusión de aluminio — fresado de 3, 4 y 5 ejes, torneado y acabado superficial."
+applications = ["Piezas fundidas mecanizadas", "Herrajes aeronáuticos", "Cajas electrónicas", "Articulaciones robóticas"]
+
+[es.prototype]
+name = "Prototipos"
+description = "Prototipado rápido de piezas de aluminio — prototipos CNC desde bloque macizo y prototipos fundidos con moldes de arena impresos en 3D."
+applications = ["Validación de diseño", "Muestras fundidas de preserie", "Producción puente", "Modelos de verificación de montaje"]

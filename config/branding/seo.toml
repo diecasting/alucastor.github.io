@@ -1,0 +1,25 @@
+# ==========================================================================
+# seo.toml — Site-wide SEO Defaults (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for site-wide SEO defaults. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Templates read these values as .Site.Params.seo.*
+# Per-page front matter `description` / `seo` overrides these.
+# ==========================================================================
+
+[params]
+[params.seo]
+  description = "Alucastor is an aluminum casting manufacturer in China providing die casting, gravity die casting, low pressure die casting, permanent mold casting, sand casting, semi-solid metal casting and precision CNC machining. Request a quote."
+  keywords = [
+    "aluminum casting manufacturer China",
+    "aluminum die casting services",
+    "gravity die casting manufacturer",
+    "low pressure die casting services",
+    "permanent mold casting services",
+    "aluminum sand casting services",
+    "semi solid metal casting company",
+    "precision CNC machining services",
+  ]
+
+  # Twitter / X handle used for twitter:site (optional).
+  twitter_site = ""

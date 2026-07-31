@@ -1,0 +1,151 @@
+# ==========================================================================
+# params.toml — Alucastor (SITE PARAMETERS)
+# ==========================================================================
+# >>> BRAND IDENTITY LIVES IN config/branding/*.toml (company / contact /
+# seo / schema). Edit those files to brand the site, then run
+# `python scripts/sync-branding.py`. <<<
+# This file holds non-branded site behaviour only.
+# ==========================================================================
+
+[Author]
+  name = "Alucastor"
+  email = "hank@alucastor.com"
+
+# --- Feature flags ---
+[features]
+  enableSearch = false
+  enableBlog = true
+  enableRFQ = true
+  enableMultilingual = true
+
+# --- Homepage configuration ---
+[homepage]
+  showServices = true
+  showIndustries = true
+  showCertifications = true
+  showProcess = true
+
+# --- Footer ---
+[footer]
+  copyright = "Alucastor"
+  showLegalLinks = false
+
+# --- Conversion band (cta-band.html, before footer) ---
+[cta]
+  title = "Need Custom Aluminum Castings from China?"
+  subtitle = "Send us your 2D/3D drawings, alloy grade and annual volume — our engineering team reviews feasibility, recommends the right casting process and replies with a quotation within 24 hours."
+
+# --- Authority website (WordPress) used for contextual linking ---
+[authority]
+  home = "https://alucastor.com/"
+  about = "https://alucastor.com/about/"
+  contact = "https://alucastor.com/contact/"
+
+# >>> BRANDING SYNC START (auto-generated from config/branding/*.toml; do not edit by hand) >>>
+
+# ==========================================================================
+# company.toml — Brand Identity (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for brand identity.
+# Merged into config/_default/params.toml by scripts/sync-branding.py.
+# Templates read these values as .Site.Params.company.*
+# ==========================================================================
+
+[company]
+  name = "Alucastor"
+  tagline = "Aluminum Casting Manufacturer in China"
+
+  [company.branding]
+    # Absolute or root-relative logo URL (PNG/SVG). Empty = text wordmark.
+    logo = ""
+    # 1-3 letter monogram shown in the header logo mark.
+    logo_mark = "AL"
+    # Small text under the wordmark. Empty = company.tagline.
+    logo_subtitle = "Aluminum Casting Manufacturer"
+
+# ==========================================================================
+# contact.toml — Contact Details (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for contact details. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Templates read these values as .Site.Params.contact.*
+# ==========================================================================
+
+[contact]
+  email = "hank@alucastor.com"
+  phone = ""
+  address = "Dongguan, Guangdong, China"
+
+  # RFQ form endpoint (Formspree action URL).
+  # If LEFT EMPTY, the RFQ form is replaced by an email CTA (graceful fallback).
+  form_action = "https://formspree.io/f/xlgqkvek"
+
+  # Authority website (WordPress) used for contextual outbound linking.
+  website = "https://alucastor.com/"
+
+# ==========================================================================
+# seo.toml — Site-wide SEO Defaults (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for site-wide SEO defaults. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Templates read these values as .Site.Params.seo.*
+# Per-page front matter `description` / `seo` overrides these.
+# ==========================================================================
+
+[seo]
+  description = "Alucastor is an aluminum casting manufacturer in China providing die casting, gravity die casting, low pressure die casting, permanent mold casting, sand casting, semi-solid metal casting and precision CNC machining. Request a quote."
+  keywords = [
+    "aluminum casting manufacturer China",
+    "aluminum die casting services",
+    "gravity die casting manufacturer",
+    "low pressure die casting services",
+    "permanent mold casting services",
+    "aluminum sand casting services",
+    "semi solid metal casting company",
+    "precision CNC machining services",
+  ]
+
+  # Twitter / X handle used for twitter:site (optional).
+  twitter_site = ""
+
+# ==========================================================================
+# schema.toml — Brand Identity for Structured Data (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for brand identity in structured data. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Consumed by the schema engine (Organization, ManufacturingBusiness,
+# WebSite, Geo) as .Site.Params.schema.*
+# Multi-language marketing text stays in data/schema/organization.toml.
+# ==========================================================================
+
+[schema]
+  legalName = "Alucastor"
+  url = "https://alucastor.github.io/"
+  logo = "https://alucastor.com/wp-content/uploads/2024/03/aluminium-casting-manufacturer.png"
+  images = [
+    "https://alucastor.com/wp-content/uploads/2024/03/aluminium-casting-manufacturer.png",
+    "https://alucastor.com/wp-content/uploads/2023/03/CNC-Machining-Factory.webp",
+    "https://alucastor.com/wp-content/uploads/2024/05/Industrial-Sand-Casting-Solutions.png",
+  ]
+
+  addressLocality = "Dongguan"
+  addressRegion = "Guangdong"
+  addressCountry = "CN"
+  contactEmail = "hank@alucastor.com"
+  contactPhone = ""
+
+  # Geographic coordinates of the primary facility (used for Geo schema).
+  latitude = 23.0207
+  longitude = 113.7518
+
+  # Social / external profiles -> Organization schema `sameAs`.
+  [schema.sameAs]
+    linkedin = ""
+    twitter = ""
+    youtube = ""
+    website = "https://alucastor.com/"
+
+  # Certifications surfaced in ManufacturingBusiness schema.
+  certifications = ["ISO 9001", "IATF 16949"]
+
+# <<< BRANDING SYNC END <<<

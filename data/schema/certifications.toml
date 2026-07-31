@@ -1,0 +1,125 @@
+# ==========================================================================
+# certifications.toml — Alucastor Quality Certifications [SITE LAYER]
+# ==========================================================================
+# Feeds ManufacturingBusiness "certifications" (schema/manufacturing.html)
+# and the homepage certifications section (sections/certifications.html).
+#
+# CONTRACT: sections/certifications.html reads index (index $certs $lang) .id,
+# so EVERY configured language MUST have a [<lang>.<id>] block.
+# ==========================================================================
+
+# --- Certification catalog (language-neutral) ---
+
+[[certifications]]
+id = "iso-9001"
+code = "ISO 9001"
+sort_order = 1
+issue_authority = "International Organization for Standardization"
+url = "https://www.iso.org/standard/62085.html"
+
+[[certifications]]
+id = "iatf-16949"
+code = "IATF 16949"
+sort_order = 2
+issue_authority = "International Automotive Task Force"
+url = "https://www.iatfglobaloversight.org/"
+
+[[certifications]]
+id = "iso-14001"
+code = "ISO 14001"
+sort_order = 3
+issue_authority = "International Organization for Standardization"
+url = "https://www.iso.org/standard/60857.html"
+
+[[certifications]]
+id = "rohs-reach"
+code = "RoHS & REACH"
+sort_order = 4
+issue_authority = "European Union"
+url = "https://echa.europa.eu/regulations/reach/understanding-reach"
+
+
+# --- English ---
+[en.iso-9001]
+name = "ISO 9001 Quality Management System"
+description = "International standard for quality management systems, ensuring consistent aluminum casting quality, documented process control and continuous improvement."
+
+[en.iatf-16949]
+name = "IATF 16949 Automotive Quality Management"
+description = "Automotive quality management standard covering APQP, PPAP, FMEA and SPC requirements for automotive production and service parts."
+
+[en.iso-14001]
+name = "ISO 14001 Environmental Management"
+description = "Environmental management standard governing energy use, aluminum scrap recycling and emissions control across the foundry."
+
+[en.rohs-reach]
+name = "RoHS & REACH Compliance"
+description = "European compliance for restricted substances in materials and surface treatments, with full declaration for exported components."
+
+# --- German ---
+[de.iso-9001]
+name = "ISO 9001 Qualitätsmanagementsystem"
+description = "Internationale Norm für Qualitätsmanagementsysteme — konstante Gussqualität, dokumentierte Prozesskontrolle und kontinuierliche Verbesserung."
+
+[de.iatf-16949]
+name = "IATF 16949 Automotive-Qualitätsmanagement"
+description = "Automobilnorm für Qualitätsmanagement mit APQP-, PPAP-, FMEA- und SPC-Anforderungen."
+
+[de.iso-14001]
+name = "ISO 14001 Umweltmanagement"
+description = "Umweltmanagementnorm für Energieeinsatz, Aluminium-Recycling und Emissionskontrolle in der Gießerei."
+
+[de.rohs-reach]
+name = "RoHS- & REACH-Konformität"
+description = "Europäische Konformität für beschränkte Stoffe in Werkstoffen und Oberflächen, mit vollständiger Deklaration."
+
+# --- Japanese ---
+[ja.iso-9001]
+name = "ISO 9001 品質マネジメントシステム"
+description = "品質マネジメントの国際規格。安定した鋳造品質、文書化された工程管理、継続的改善を保証します。"
+
+[ja.iatf-16949]
+name = "IATF 16949 自動車品質マネジメント"
+description = "APQP、PPAP、FMEA、SPCの要求事項を網羅する自動車産業向け品質マネジメント規格。"
+
+[ja.iso-14001]
+name = "ISO 14001 環境マネジメント"
+description = "エネルギー使用、アルミスクラップのリサイクル、排出管理を対象とする環境マネジメント規格。"
+
+[ja.rohs-reach]
+name = "RoHS・REACH 適合"
+description = "材料および表面処理における規制物質に関する欧州適合。輸出部品には完全な宣言書を発行します。"
+
+# --- French ---
+[fr.iso-9001]
+name = "Système de management de la qualité ISO 9001"
+description = "Norme internationale de management de la qualité — qualité de fonderie constante, maîtrise documentée des procédés et amélioration continue."
+
+[fr.iatf-16949]
+name = "Management qualité automobile IATF 16949"
+description = "Norme qualité automobile couvrant les exigences APQP, PPAP, AMDEC et MSP."
+
+[fr.iso-14001]
+name = "Management environnemental ISO 14001"
+description = "Norme environnementale encadrant la consommation d'énergie, le recyclage de l'aluminium et le contrôle des émissions."
+
+[fr.rohs-reach]
+name = "Conformité RoHS & REACH"
+description = "Conformité européenne pour les substances réglementées dans les matériaux et traitements de surface, avec déclaration complète."
+
+# --- Spanish ---
+[es.iso-9001]
+name = "Sistema de gestión de calidad ISO 9001"
+description = "Norma internacional de gestión de calidad — calidad de fundición constante, control documentado de procesos y mejora continua."
+
+[es.iatf-16949]
+name = "Gestión de calidad de automoción IATF 16949"
+description = "Norma de calidad de automoción que cubre los requisitos APQP, PPAP, AMFE y CEP."
+
+[es.iso-14001]
+name = "Gestión ambiental ISO 14001"
+description = "Norma ambiental que regula el consumo energético, el reciclaje de aluminio y el control de emisiones."
+
+[es.rohs-reach]
+name = "Conformidad RoHS y REACH"
+description = "Conformidad europea para sustancias restringidas en materiales y tratamientos superficiales, con declaración completa."

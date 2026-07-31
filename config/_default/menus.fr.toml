@@ -1,0 +1,37 @@
+# ==========================================================================
+# menus.fr.toml — Alucastor (fr navigation)
+# ==========================================================================
+# Multilingual architecture is prepared: translated pages are linked with
+# `translationKey`. Until a page is translated, the menu points to the
+# canonical English URL so no navigation link is ever broken.
+# ==========================================================================
+
+[[main]]
+  name = "Accueil"
+  url = "/fr/"
+  weight = 1
+
+[[main]]
+  name = "Services de fonderie"
+  url = "/services/"
+  weight = 2
+
+[[main]]
+  name = "Matériaux"
+  url = "/materials/"
+  weight = 3
+
+[[main]]
+  name = "Industries"
+  url = "/industries/"
+  weight = 4
+
+[[main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 5
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 6

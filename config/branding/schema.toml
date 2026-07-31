@@ -1,0 +1,40 @@
+# ==========================================================================
+# schema.toml — Brand Identity for Structured Data (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for brand identity in structured data. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Consumed by the schema engine (Organization, ManufacturingBusiness,
+# WebSite, Geo) as .Site.Params.schema.*
+# Multi-language marketing text stays in data/schema/organization.toml.
+# ==========================================================================
+
+[params]
+[params.schema]
+  legalName = "Alucastor"
+  url = "https://alucastor.github.io/"
+  logo = "https://alucastor.com/wp-content/uploads/2024/03/aluminium-casting-manufacturer.png"
+  images = [
+    "https://alucastor.com/wp-content/uploads/2024/03/aluminium-casting-manufacturer.png",
+    "https://alucastor.com/wp-content/uploads/2023/03/CNC-Machining-Factory.webp",
+    "https://alucastor.com/wp-content/uploads/2024/05/Industrial-Sand-Casting-Solutions.png",
+  ]
+
+  addressLocality = "Dongguan"
+  addressRegion = "Guangdong"
+  addressCountry = "CN"
+  contactEmail = "hank@alucastor.com"
+  contactPhone = ""
+
+  # Geographic coordinates of the primary facility (used for Geo schema).
+  latitude = 23.0207
+  longitude = 113.7518
+
+  # Social / external profiles -> Organization schema `sameAs`.
+  [params.schema.sameAs]
+    linkedin = ""
+    twitter = ""
+    youtube = ""
+    website = "https://alucastor.com/"
+
+  # Certifications surfaced in ManufacturingBusiness schema.
+  certifications = ["ISO 9001", "IATF 16949"]

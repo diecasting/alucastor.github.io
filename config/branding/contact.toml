@@ -1,0 +1,20 @@
+# ==========================================================================
+# contact.toml — Contact Details (Alucastor)
+# ==========================================================================
+# SINGLE SOURCE OF TRUTH for contact details. Merged into
+# config/_default/params.toml by scripts/sync-branding.py.
+# Templates read these values as .Site.Params.contact.*
+# ==========================================================================
+
+[params]
+[params.contact]
+  email = "hank@alucastor.com"
+  phone = ""
+  address = "Dongguan, Guangdong, China"
+
+  # RFQ form endpoint (Formspree action URL).
+  # If LEFT EMPTY, the RFQ form is replaced by an email CTA (graceful fallback).
+  form_action = "https://formspree.io/f/xlgqkvek"
+
+  # Authority website (WordPress) used for contextual outbound linking.
+  website = "https://alucastor.com/"
