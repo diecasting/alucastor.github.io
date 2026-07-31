@@ -6,7 +6,7 @@
 # All branding lives in config/branding/*.toml -> config/_default/params.toml.
 # ==========================================================================
 
-baseURL = "https://alucastor.github.io/"
+baseURL = "https://diecasting.github.io/alucastor.github.io/"
 locale = "en-US"
 title = "Alucastor"
 defaultContentLanguage = "en"
@@ -14,6 +14,11 @@ defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 enableGitInfo = true
 enableMissingTranslationPlaceholders = false
+# Served as a GitHub Pages project page under /alucastor.github.io/.
+# canonifyURLs rewrites root-relative links (e.g. /services/...) in content
+# and templates to absolute URLs that include the subpath, so internal links
+# and canonical/sitemap output resolve correctly under the project subpath.
+canonifyURLs = true
 
 # Pagination
 paginate = 12
