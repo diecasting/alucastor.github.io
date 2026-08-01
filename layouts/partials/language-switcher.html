@@ -1,0 +1,66 @@
+{{- /* language-switcher.html — Multilingual navigation switcher
+   Lists every site language (EN DE JA FR ES). On a translated page it
+   switches to the matching translation; when a translation is missing
+   for the current page it falls back to that language's home page.
+   Front-end only: does not alter content, schema, data, or config.
+   No external libraries — minimal inline JS only. */ -}}
+{{- if gt (len .Site.Home.AllTranslations) 1 -}}
+{{- $currentLang := .Lang -}}
+{{- $names := dict "en" "English" "de" "Deutsch" "ja" "日本語" "fr" "Français" "es" "Español" -}}
+{{- $currentName := index $names $currentLang | default (title $currentLang) -}}
+<div class="lang-switcher" data-lang-switcher>
+  <button type="button" class="lang-switcher__toggle" aria-haspopup="true" aria-expanded="false" aria-label="Select language">
+    <span class="lang-switcher__globe" aria-hidden="true">🌐</span>
+    <span class="lang-switcher__label">{{ $currentName }}</span>
+    <span class="lang-switcher__caret" aria-hidden="true">▾</span>
+  </button>
+  <ul class="lang-switcher__menu" role="menu" aria-label="Languages">
+    {{- range .Site.Home.AllTranslations -}}
+      {{- $code := .Lang -}}
+      {{- $name := index $names $code | default (title $code) -}}
+      {{- /* default target: that language's home ("/" for the default language) */ -}}
+      {{- $target := .RelPermalink -}}
+      {{- if eq $code $currentLang -}}
+        {{- $target = $.RelPermalink -}}
+      {{- else -}}
+        {{- range $.Translations -}}
+          {{- if eq .Lang $code -}}{{- $target = .RelPermalink -}}{{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <li role="none">
+        <a role="menuitem" href="{{ $target }}" hreflang="{{ $code }}"
+           class="lang-switcher__item{{ if eq $code $currentLang }} is-active{{ end }}">
+          <span class="lang-switcher__code">{{ $code | upper }}</span>
+          <span class="lang-switcher__name">{{ $name }}</span>
+          {{- if eq $code $currentLang -}}<span class="lang-switcher__check" aria-hidden="true">✓</span>{{- end -}}
+        </a>
+      </li>
+    {{- end -}}
+  </ul>
+</div>
+<script>
+(function () {
+  function closeAll(except) {
+    document.querySelectorAll('.lang-switcher.is-open').forEach(function (el) {
+      if (el === except) return;
+      el.classList.remove('is-open');
+      var t = el.querySelector('.lang-switcher__toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var root = e.target.closest('.lang-switcher');
+    if (root && e.target.closest('.lang-switcher__toggle')) {
+      var open = root.classList.toggle('is-open');
+      root.querySelector('.lang-switcher__toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) closeAll(root);
+      return;
+    }
+    closeAll(null);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll(null);
+  });
+})();
+</script>
+{{- end -}}
