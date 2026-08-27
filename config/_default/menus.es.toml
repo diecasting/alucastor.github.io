@@ -35,3 +35,34 @@
   name = "Contacto"
   url = "/contact/"
   weight = 6
+
+# --- Dedicated footer navigation (curated, not a copy of the main menu) ---
+[[footer]]
+  name = "Acerca de"
+  url = "/about/"
+  weight = 1
+
+[[footer]]
+  name = "Capacidades"
+  url = "/services/"
+  weight = 2
+
+[[footer]]
+  name = "Materiales"
+  url = "/materials/"
+  weight = 3
+
+[[footer]]
+  name = "Sectores"
+  url = "/industries/"
+  weight = 4
+
+[[footer]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 5
+
+[[footer]]
+  name = "Contacto"
+  url = "/contact/"
+  weight = 6

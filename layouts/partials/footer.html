@@ -1,14 +1,22 @@
-{{- /* footer.html — Site footer */ -}}
+{{- /* footer.html — Site footer (3-column professional industrial layout)
+   - Col 1: company identity (brand + descriptor + legal name)
+   - Col 2: dedicated footer navigation (.Site.Menus.footer)
+   - Col 3: contact NAP (kept identical to Organization/LocalBusiness JSON-LD)
+   Only layout/styling; no content/SEO/schema changes. */ -}}
 <footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-col">
-      <h4>{{ .Site.Title }}</h4>
-      <p>{{ .Site.Params.seo.description }}</p>
+    <div class="footer-col footer-brand">
+      <a href="{{ .Site.BaseURL }}" class="footer-logo" aria-label="{{ .Site.Title }} home">
+        <span class="logo-mark">{{ .Site.Params.company.branding.logo_mark | default "AL" }}</span>
+        <span class="footer-wordmark">{{ .Site.Title }}</span>
+      </a>
+      {{ with .Site.Params.company.footer_description }}<p class="footer-tagline">{{ . }}</p>{{ end }}
+      {{ with .Site.Params.contact.legalName }}<p class="footer-legal-name">{{ . }}</p>{{ end }}
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        {{ range .Site.Menus.main }}
+        {{ range .Site.Menus.footer }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
@@ -26,16 +34,6 @@
         {{ with .Site.Params.contact.phone }}<li>{{ . }}</li>{{ end }}
       </ul>
     </div>
-    {{ with .Site.Menus.footer }}
-    <div class="footer-col">
-      <h4>Legal</h4>
-      <ul>
-        {{ range . }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
   </div>
   <div class="footer-bottom">
     <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.footer.copyright | default .Site.Title }}. All rights reserved.</p>

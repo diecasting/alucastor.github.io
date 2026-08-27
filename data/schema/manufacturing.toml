@@ -72,6 +72,13 @@ process_types = [
   "Precision CNC Machining",
   "Rapid Prototyping"
 ]
+capability_descriptions = [
+  "Permanent-mold aluminum casting in reusable H13 steel dies for dense, pressure-tight parts, supported by in-house tooling, T6 heat treatment and CNC machining.",
+  "Resin, green and 3D-printed sand molds for large, complex or low-volume aluminum parts with no permanent tooling investment.",
+  "Controlled low-pressure filling for high-integrity aluminum components with low porosity, suitable for T6 heat treatment and welding.",
+  "3/4/5-axis milling and turning of cast and bar-stock parts to tight tolerances, with CMM and spectrometer inspection on site.",
+  "CNC and casting prototype routes with no tooling commitment, so design and manufacturability are validated before series production."
+]
 
 [de]
 knows_about = [
@@ -92,6 +99,13 @@ process_types = [
   "Niederdruckguss",
   "Präzisions-CNC-Bearbeitung",
   "Rapid Prototyping"
+]
+capability_descriptions = [
+  "Kokillenguss in wiederverwendbaren H13-Dauerformen für dichte, druckdichte Teile, unterstützt durch Werkzeugbau, T6-Wärmebehandlung und CNC-Bearbeitung im Haus.",
+  "Harz-, Nass- und 3D-gedruckte Sandformen für große, komplexe oder kleinserige Aluminiumteile ohne Dauerformeninvestition.",
+  "Geregelter Niederdruck-Gießprozess für hochintegrale Aluminiumbauteile mit geringer Porosität, geeignet für T6-Wärmebehandlung und Schweißen.",
+  "3/4/5-Achs-Fräsen und Drehen von Guss- und Stangenmaterial mit engen Toleranzen, mit CMM- und Spektrometerprüfung vor Ort.",
+  "CNC- und Gussprototypen ohne Werkzeuginvestition, damit Design und Fertigbarkeit vor der Serienproduktion validiert werden."
 ]
 
 [ja]
@@ -114,6 +128,13 @@ process_types = [
   "精密CNC加工",
   "ラピッドプロトタイピング"
 ]
+capability_descriptions = [
+  "再利用可能なH13金型による重力鋳造で、緻密で気密性の高い部品を実現。金型製作、T6熱処理、CNC加工を社内で一貫対応。",
+  "樹脂砂・生砂・3Dプリント砂型により、大型・複雑形状・小ロットのアルミ部品を金型投資なしで対応。",
+  "低圧鋳造による制御された充填で、ポロシティの少ない高品位アルミ部品を実現。T6熱処理や溶接にも適する。",
+  "鋳造品・棒材の3/4/5軸フライス・旋盤加工を高精度で実施。三次元測定機と分光分析を社内で対応。",
+  "金型投資のないCNC試作・鋳造試作により、量産前に設計と製造性を検証。"
+]
 
 [fr]
 knows_about = [
@@ -135,6 +156,13 @@ process_types = [
   "Usinage CNC de précision",
   "Prototypage rapide"
 ]
+capability_descriptions = [
+  "Moulage en coquille en moules permanents H13 réutilisables pour des pièces denses et étanches, avec outillage, traitement thermique T6 et usinage CNC internes.",
+  "Sables à prise résine, sable vert et sable imprimé 3D pour des pièces aluminium grandes, complexes ou en petites séries, sans investissement en moule permanent.",
+  "Remplissage basse pression contrôlé pour des composants aluminium à haute intégrité et faible porosité, adaptés au traitement T6 et au soudage.",
+  "Fraisage et tournage 3/4/5 axes de pièces moulées ou barres à tolérances serrées, avec contrôle MMT et spectrométrie sur site.",
+  "Prototypage CNC et par fonderie sans investissement en outillage, pour valider le design et la fabilité avant la production en série."
+]
 
 [es]
 knows_about = [
@@ -155,4 +183,11 @@ process_types = [
   "Fundición a baja presión",
   "Mecanizado CNC de precisión",
   "Prototipado rápido"
+]
+capability_descriptions = [
+  "Fundición en coquilla en moldes permanentes H13 reutilizables para piezas densas y estancas, con utillaje, tratamiento térmico T6 y mecanizado CNC propios.",
+  "Arena de resina, arena verde y arena impresa en 3D para piezas de aluminio grandes, complejas o de baja serie, sin inversión en molde permanente.",
+  "Llenado a baja presión controlado para componentes de aluminio de alta integridad y baja porosidad, adecuados para T6 y soldadura.",
+  "Fresado y torneado 3/4/5 ejes de piezas fundidas o barras con tolerancias ajustadas, con control CMM y espectrometría in situ.",
+  "Prototipado CNC y por fonderia sin inversión en utillaje, para validar diseño y fabricabilidad antes de la producción en serie."
 ]

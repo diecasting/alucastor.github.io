@@ -11,6 +11,7 @@
       {{ range $i, $pt := $mfgLocalized.process_types }}
       <div class="capability-card">
         <h3>{{ $pt }}</h3>
+        {{ with (index $mfgLocalized.capability_descriptions $i) }}<p>{{ . }}</p>{{ end }}
       </div>
       {{ end }}
     </div>

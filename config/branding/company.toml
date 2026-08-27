@@ -10,6 +10,8 @@
 [params.company]
   name = "Alucastor"
   tagline = "Aluminum Casting Manufacturer in China"
+  # Short company descriptor shown in the footer brand column.
+  footer_description = "Precision metal manufacturing solutions for global industrial customers."
 
   [params.company.branding]
     # Absolute or root-relative logo URL (PNG/SVG). Empty = text wordmark.

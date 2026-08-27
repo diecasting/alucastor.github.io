@@ -35,3 +35,34 @@
   name = "お問い合わせ"
   url = "/contact/"
   weight = 6
+
+# --- Dedicated footer navigation (curated, not a copy of the main menu) ---
+[[footer]]
+  name = "会社概要"
+  url = "/about/"
+  weight = 1
+
+[[footer]]
+  name = "製造能力"
+  url = "/services/"
+  weight = 2
+
+[[footer]]
+  name = "材料"
+  url = "/materials/"
+  weight = 3
+
+[[footer]]
+  name = "産業分野"
+  url = "/industries/"
+  weight = 4
+
+[[footer]]
+  name = "ブログ"
+  url = "/blog/"
+  weight = 5
+
+[[footer]]
+  name = "お問い合わせ"
+  url = "/contact/"
+  weight = 6
