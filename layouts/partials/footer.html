@@ -15,6 +15,12 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
+      <address class="footer-address">
+        {{ with .Site.Params.contact.legalName }}<span class="footer-legal">{{ . }}</span>{{ end }}
+        {{ with .Site.Params.contact.address_street }}<span>{{ . }}</span>{{ end }}
+        {{ with .Site.Params.contact.address_locality }}<span>{{ . }}</span>{{ end }}
+        {{ with .Site.Params.contact.address_country }}<span>{{ . }}</span>{{ end }}
+      </address>
       <ul>
         {{ with .Site.Params.contact.email }}<li><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
         {{ with .Site.Params.contact.phone }}<li>{{ . }}</li>{{ end }}

@@ -10,7 +10,10 @@
 [params.contact]
   email = "hank@alucastor.com"
   phone = ""
-  address = "Dongguan, Guangdong, China"
+  legalName = "Dongguan Baiqiang Metal Products Co., Ltd."
+  address_street = "37 Xi'an West Road"
+  address_locality = "Qishi, Dongguan"
+  address_country = "China"
 
   # RFQ form endpoint (Formspree action URL).
   # If LEFT EMPTY, the RFQ form is replaced by an email CTA (graceful fallback).

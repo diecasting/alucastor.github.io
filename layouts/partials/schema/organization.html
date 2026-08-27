@@ -67,10 +67,16 @@
   {{- end -}}
   "address": {
     "@type": "PostalAddress",
+    {{ with $schema.streetAddress | default $org.identity.street_address }}"streetAddress": "{{ . | safeJS }}",{{ end }}
     {{ with $schema.addressLocality | default $org.identity.address_locality }}"addressLocality": "{{ . | safeJS }}",{{ end }}
-    {{ with $schema.addressRegion | default $org.identity.address_region }}"addressRegion": "{{ . | safeJS }}",{{ end }}
     {{ with $schema.addressCountry | default $org.identity.address_country }}"addressCountry": "{{ . | safeJS }}"{{ end }}
-  }
+  }{{ with $schema.latitude | default $org.identity.latitude -}}
+  ,
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{ . }}",
+    "longitude": "{{ $schema.longitude | default $org.identity.longitude }}"
+  }{{ end -}}
   {{- if $sa -}}
   ,
   "sameAs": [
