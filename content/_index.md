@@ -18,6 +18,7 @@ sections:
   - capabilities
   - process
   - materials
+  - production_capacity
   - industries
   - certifications
   - faq
@@ -117,23 +118,6 @@ Two prototype routes depending on what you need to prove. CNC prototypes cut fro
 - **Real inspection capability.** Zeiss CMM, optical emission spectrometry, X-ray, dye penetrant and helium or air leak testing. Full dimensional and material reports ship with the parts.
 - **Honest process selection.** If your part is better made by sand casting than by an expensive permanent mold, we will say so — even though the tooling revenue is lower.
 - **Multilingual, export-ready.** Documentation, packing and logistics prepared for European, North American and Japanese customers, with quotations available in five languages.
-
-## Production Capacity at a Glance
-
-{{< capability_table
-header="Capability,Specification"
-row1="Annual casting output,~3000 tonnes"
-row2="Casting machines,28"
-row3="CNC machines,36"
-row4="Factory area,12000 m²"
-row5="Casting weight range,0.05 kg to 80 kg"
-row6="As-cast dimensional tolerance,CT6 to CT8"
-row7="Machined tolerance,±0.02 mm"
-row8="Surface roughness (machined),Ra 0.8 to Ra 3.2"
-row9="Sample lead time after tooling,~15 days"
-row10="Sand pattern lead time,7 to 12 days"
-row11="Permanent mold lead time,25 to 35 days"
->}}{{< /capability_table >}}
 
 ## Aluminum Alloys We Cast and Machine
 

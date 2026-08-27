@@ -1,0 +1,20 @@
+{{- /* sections/production_capacity.html — Production Capacity at a Glance
+   Replaces the broken capability_table shortcode.
+   Data: data/schema/production_capacity.toml  (hugo.Data.schema.production_capacity)
+   Grounded in existing Alucastor copy only — no invented specs. */ -}}
+{{- $lang := .Page.Language.Lang -}}
+{{- $pc := hugo.Data.schema.production_capacity -}}
+{{- $pcLocalized := index $pc $lang -}}
+<section class="section section-production-capacity" id="production-capacity">
+  <div class="container">
+    <h2 class="section-title">{{ $pcLocalized.section_title }}</h2>
+    <div class="pc-grid">
+      {{ range $i, $t := $pcLocalized.card_titles }}
+      <div class="pc-card">
+        <h3>{{ $t }}</h3>
+        <p>{{ index $pcLocalized.card_bodies $i }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+{{- /* cta-inline.html — contextual section CTA
+   Expects a dict: { "text": "...", "href": "..." }
+   Uses the existing .btn button style. No duplicate of the hero CTA. */ -}}
+<div class="section-cta-center">
+  <a href="{{ .href }}" class="btn btn-primary btn-lg">{{ .text }}</a>
+</div>

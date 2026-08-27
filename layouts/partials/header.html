@@ -2,7 +2,7 @@
    - sticky, 1200px centered container
    - logo mark + wordmark
    - dropdown-capable menu (data-driven)
-   - inline "Get a Quote" CTA
+   - inline "Get a Quote" CTA (bar on desktop/tablet, inside menu on mobile)
    - mobile responsive hamburger
    Only layout/styling; no content/SEO/schema changes. */ -}}
 <header class="site-header">
@@ -17,6 +17,9 @@
       {{- end -}}
       <span class="logo-text">{{ $companyName }}<small>{{ .Site.Params.company.branding.logo_subtitle | default .Site.Params.company.tagline }}</small></span>
     </a>
+
+    {{- $quoteHref := "#rfq" -}}
+    {{- if not .IsHome -}}{{- $quoteHref = printf "%s#rfq" .Site.BaseURL -}}{{- end -}}
 
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"
             onclick="var n=this.parentElement; n.classList.toggle('nav-open'); this.setAttribute('aria-expanded', n.classList.contains('nav-open'));">
@@ -37,10 +40,11 @@
       </li>
       {{ end }}
       <li class="lang-nav-item">{{ partial "language-switcher.html" . }}</li>
+      {{- /* Mobile-menu CTA — only visible inside the dropdown on small screens */ -}}
+      <li class="nav-cta-mobile"><a href="{{ $quoteHref }}" class="btn btn-primary btn-sm nav-cta-link">Get a Quote</a></li>
     </ul>
 
-    {{- $quoteHref := "#rfq" -}}
-    {{- if not .IsHome -}}{{- $quoteHref = printf "%s#rfq" .Site.BaseURL -}}{{- end -}}
+    {{- /* Bar CTA — visible on desktop and tablet; hidden on mobile (replaced by the in-menu CTA above) */ -}}
     <a href="{{ $quoteHref }}" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
   </nav>
 </header>

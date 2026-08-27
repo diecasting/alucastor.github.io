@@ -1,0 +1,87 @@
+# ==========================================================================
+# production_capacity.toml — Homepage "Production Capacity at a Glance" section
+# ==========================================================================
+# Replaces the broken capability_table shortcode (comma-delimited params were
+# mangled by Hugo's shortcode parser). Rendered by
+#   layouts/partials/sections/production_capacity.html
+# via data/schema (hugo.Data.schema.production_capacity.<lang>).
+#
+# Content is grounded ONLY in existing, published Alucastor copy
+# (content/_index.md, services pages). No invented factory size, headcount,
+# volume, certifications or tonnage.
+# ==========================================================================
+
+[en]
+section_title = "Production Capacity at a Glance"
+card_titles = [
+  "Manufacturing Process",
+  "Engineering Support",
+  "Production Capability",
+  "Quality Focus"
+]
+card_bodies = [
+  "Aluminum die casting and custom metal manufacturing solutions.",
+  "DFM review and production optimization support.",
+  "Custom precision components for industrial applications.",
+  "Manufacturing control and inspection processes."
+]
+
+[de]
+section_title = "Produktionskapazität auf einen Blick"
+card_titles = [
+  "Fertigungsverfahren",
+  "Konstruktionsunterstützung",
+  "Produktionskapazität",
+  "Qualitätsfokus"
+]
+card_bodies = [
+  "Aluminium-Druckguss und kundenspezifische Metallfertigungslösungen.",
+  "DFM-Bewertung und Unterstützung bei der Produktionsoptimierung.",
+  "Kundenspezifische Präzisionsbauteile für Industrieanwendungen.",
+  "Fertigungssteuerung und Prüfprozesse."
+]
+
+[ja]
+section_title = "生産能力の概要"
+card_titles = [
+  "製造プロセス",
+  "エンジニアリング支援",
+  "生産能力",
+  "品質重視"
+]
+card_bodies = [
+  "アルミダイカストおよびカスタム金属製造ソリューション。",
+  "DFMレビューと生産最適化の支援。",
+  "産業用途向けのカスタム精密部品。",
+  "製造管理と検査プロセス。"
+]
+
+[fr]
+section_title = "Capacité de production en un coup d'œil"
+card_titles = [
+  "Procédé de fabrication",
+  "Support ingénierie",
+  "Capacité de production",
+  "Focus qualité"
+]
+card_bodies = [
+  "Fonderie sous pression d'aluminium et solutions de fabrication métallique sur mesure.",
+  "Revue DFM et optimisation de la production.",
+  "Composants de précision sur mesure pour applications industrielles.",
+  "Maîtrise de la fabrication et processus d'inspection."
+]
+
+[es]
+section_title = "Capacidad de producción de un vistazo"
+card_titles = [
+  "Proceso de fabricación",
+  "Soporte de ingeniería",
+  "Capacidad de producción",
+  "Enfoque en calidad"
+]
+card_bodies = [
+  "Fundición a presión de aluminio y soluciones de fabricación metálica a medida.",
+  "Revisión DFM y optimización de la producción.",
+  "Componentes de precisión a medida para aplicaciones industriales.",
+  "Control de fabricación y procesos de inspección."
+]
